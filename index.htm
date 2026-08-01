@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Character Encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page Title -->
+    <title>Student Study Dashboard</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- =========================
+         MAIN APPLICATION
+    ========================== -->
+
+    <div class="app">
+
+        <!-- =========================
+             SIDEBAR
+        ========================== -->
+
+        <aside class="sidebar">
+
+            <!-- Logo -->
+            <div class="logo">
+                <h2>StudyFlow</h2>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="navigation">
+
+                <ul>
+
+                    <li>
+                        <a href="index.html">
+                            🏠 Dashboard
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            📚 Subjects
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            📝 Notes
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            ✅ Tasks
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            📊 Progress
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            📅 Calendar
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+            <!-- Sidebar Bottom -->
+            <div class="sidebar-bottom">
+
+                <a href="#">
+                    ⚙️ Settings
+                </a>
+
+                <a href="#">
+                    🚪 Logout
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =========================
+             MAIN CONTENT
+        ========================== -->
+
+        <main class="main-content">
+
+            <!-- =========================
+                 TOP NAVBAR
+            ========================== -->
+
+            <header class="topbar">
+
+                <div class="page-title">
+
+                    <h1>Dashboard</h1>
+
+                    <p>
+                        Manage your studies and stay productive.
+                    </p>
+
+                </div>
+
+                <div class="user-area">
+
+                    <button class="notification-button">
+                        🔔
+                    </button>
+
+                    <div class="user-profile">
+
+                        <div class="user-avatar">
+                            A
+                        </div>
+
+                        <div class="user-info">
+
+                            <strong>Student</strong>
+
+                            <span>
+                                BCA Student
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- =========================
+                 DASHBOARD CONTENT
+            ========================== -->
+
+            <section class="dashboard-content">
+
+
+                <!-- =========================
+                     WELCOME SECTION
+                ========================== -->
+
+                <section class="welcome-section">
+
+                    <div>
+
+                        <h2>
+                            Good Evening 👋
+                        </h2>
+
+                        <p>
+                            Ready to continue your learning?
+                        </p>
+
+                    </div>
+
+                    <button class="primary-button">
+                        + Add Task
+                    </button>
+
+                </section>
+
+
+                <!-- =========================
+                     STATISTICS
+                ========================== -->
+
+                <section class="statistics">
+
+                    <!-- Subjects Card -->
+
+                    <article class="stat-card">
+
+                        <div class="stat-icon">
+                            📚
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Total Subjects
+                            </span>
+
+                            <h2>
+                                6
+                            </h2>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Tasks Card -->
+
+                    <article class="stat-card">
+
+                        <div class="stat-icon">
+                            ✅
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Total Tasks
+                            </span>
+
+                            <h2>
+                                18
+                            </h2>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Notes Card -->
+
+                    <article class="stat-card">
+
+                        <div class="stat-icon">
+                            📝
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Total Notes
+                            </span>
+
+                            <h2>
+                                24
+                            </h2>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Progress Card -->
+
+                    <article class="stat-card">
+
+                        <div class="stat-icon">
+                            📈
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Overall Progress
+                            </span>
+
+                            <h2>
+                                72%
+                            </h2>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+
+                <!-- =========================
+                     DASHBOARD GRID
+                ========================== -->
+
+                <section class="dashboard-grid">
+
+
+                    <!-- =========================
+                         TODAY'S TASKS
+                    ========================== -->
+
+                    <article class="dashboard-card tasks-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <h2>
+                                    Today's Tasks
+                                </h2>
+
+                                <p>
+                                    Stay on top of your work.
+                                </p>
+
+                            </div>
+
+                            <a href="#">
+                                View All
+                            </a>
+
+                        </div>
+
+
+                        <ul class="task-list">
+
+                            <li class="task-item">
+
+                                <input type="checkbox" id="task1">
+
+                                <label for="task1">
+
+                                    Complete Java OOP
+
+                                    <span>
+                                        Java
+                                    </span>
+
+                                </label>
+
+                            </li>
+
+
+                            <li class="task-item">
+
+                                <input type="checkbox" id="task2">
+
+                                <label for="task2">
+
+                                    Revise Arrays
+
+                                    <span>
+                                        Data Structures
+                                    </span>
+
+                                </label>
+
+                            </li>
+
+
+                            <li class="task-item">
+
+                                <input type="checkbox" id="task3">
+
+                                <label for="task3">
+
+                                    Complete UI Wireframe
+
+                                    <span>
+                                        UI/UX
+                                    </span>
+
+                                </label>
+
+                            </li>
+
+
+                            <li class="task-item">
+
+                                <input type="checkbox" id="task4">
+
+                                <label for="task4">
+
+                                    Read Robotics Chapter 2
+
+                                    <span>
+                                        Robotics
+                                    </span>
+
+                                </label>
+
+                            </li>
+
+                        </ul>
+
+                    </article>
+
+
+                    <!-- =========================
+                         PROGRESS
+                    ========================== -->
+
+                    <article class="dashboard-card progress-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <h2>
+                                    Overall Progress
+                                </h2>
+
+                                <p>
+                                    Your current study progress.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="progress-container">
+
+                            <div class="progress-circle">
+
+                                <strong>
+                                    72%
+                                </strong>
+
+                            </div>
+
+                            <p>
+                                Keep going! You're doing great.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                </section>
+
+
+                <!-- =========================
+                     SUBJECTS
+                ========================== -->
+
+                <section class="subjects-section">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <h2>
+                                My Subjects
+                            </h2>
+
+                            <p>
+                                Track your subjects and progress.
+                            </p>
+
+                        </div>
+
+                        <a href="#">
+                            View All
+                        </a>
+
+                    </div>
+
+
+                    <div class="subject-grid">
+
+
+                        <!-- Java -->
+
+                        <article class="subject-card">
+
+                            <h3>
+                                Java Programming
+                            </h3>
+
+                            <p>
+                                Programming
+                            </p>
+
+                            <div class="subject-progress">
+
+                                <span>
+                                    Progress: 80%
+                                </span>
+
+                                <div class="progress-bar">
+
+                                    <div class="progress-fill" style="width: 80%;"></div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="subject-info">
+
+                                <span>
+                                    📝 8 Notes
+                                </span>
+
+                                <span>
+                                    ✅ 12 Tasks
+                                </span>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- OOPS -->
+
+                        <article class="subject-card">
+
+                            <h3>
+                                OOPS
+                            </h3>
+
+                            <p>
+                                Object Oriented Programming
+                            </p>
+
+                            <div class="subject-progress">
+
+                                <span>
+                                    Progress: 65%
+                                </span>
+
+                                <div class="progress-bar">
+
+                                    <div class="progress-fill" style="width: 65%;"></div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="subject-info">
+
+                                <span>
+                                    📝 6 Notes
+                                </span>
+
+                                <span>
+                                    ✅ 8 Tasks
+                                </span>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- UI/UX -->
+
+                        <article class="subject-card">
+
+                            <h3>
+                                UI/UX Design
+                            </h3>
+
+                            <p>
+                                Designing Principles
+                            </p>
+
+                            <div class="subject-progress">
+
+                                <span>
+                                    Progress: 70%
+                                </span>
+
+                                <div class="progress-bar">
+
+                                    <div class="progress-fill" style="width: 70%;"></div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="subject-info">
+
+                                <span>
+                                    📝 5 Notes
+                                </span>
+
+                                <span>
+                                    ✅ 6 Tasks
+                                </span>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- Robotics -->
+
+                        <article class="subject-card">
+
+                            <h3>
+                                Robotics
+                            </h3>
+
+                            <p>
+                                Robotics & Automation
+                            </p>
+
+                            <div class="subject-progress">
+
+                                <span>
+                                    Progress: 40%
+                                </span>
+
+                                <div class="progress-bar">
+
+                                    <div class="progress-fill" style="width: 40%;"></div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="subject-info">
+
+                                <span>
+                                    📝 3 Notes
+                                </span>
+
+                                <span>
+                                    ✅ 5 Tasks
+                                </span>
+
+                            </div>
+
+                        </article>
+
+
+                    </div>
+
+                </section>
+
+
+                <!-- =========================
+                     RECENT NOTES
+                ========================== -->
+
+                <section class="notes-section">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <h2>
+                                Recent Notes
+                            </h2>
+
+                            <p>
+                                Quickly access your latest notes.
+                            </p>
+
+                        </div>
+
+                        <a href="#">
+                            View All
+                        </a>
+
+                    </div>
+
+
+                    <div class="notes-grid">
+
+
+                        <article class="note-card">
+
+                            <span class="note-subject">
+                                Java
+                            </span>
+
+                            <h3>
+                                Java Constructors
+                            </h3>
+
+                            <p>
+                                Constructors are special methods
+                                used to initialize objects...
+                            </p>
+
+                            <small>
+                                Updated today
+                            </small>
+
+                        </article>
+
+
+                        <article class="note-card">
+
+                            <span class="note-subject">
+                                OOPS
+                            </span>
+
+                            <h3>
+                                Inheritance
+                            </h3>
+
+                            <p>
+                                Inheritance allows one class to
+                                acquire properties of another...
+                            </p>
+
+                            <small>
+                                Updated yesterday
+                            </small>
+
+                        </article>
+
+
+                        <article class="note-card">
+
+                            <span class="note-subject">
+                                UI/UX
+                            </span>
+
+                            <h3>
+                                Design Principles
+                            </h3>
+
+                            <p>
+                                Important principles of creating
+                                user-friendly interfaces...
+                            </p>
+
+                            <small>
+                                Updated 2 days ago
+                            </small>
+
+                        </article>
+
+
+                    </div>
+
+                </section>
+
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,390 @@
+/* =========================
+   BASIC RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    color: #222;
+}
+
+
+/* =========================
+   APP
+========================= */
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    width: 240px;
+    background: #111827;
+    color: white;
+    padding: 25px;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+    margin-bottom: 40px;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navigation ul {
+    list-style: none;
+}
+
+.navigation li {
+    margin-bottom: 15px;
+}
+
+.navigation a,
+.sidebar-bottom a {
+    color: white;
+    text-decoration: none;
+}
+
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content {
+    flex: 1;
+    padding: 30px;
+}
+
+
+/* =========================
+   TOPBAR
+========================= */
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   USER
+========================= */
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    background: #4f46e5;
+    color: white;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================
+   WELCOME
+========================= */
+
+.welcome-section {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.primary-button {
+    background: #4f46e5;
+    color: white;
+
+    border: none;
+    padding: 12px 18px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   STATISTICS
+========================= */
+
+.statistics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+
+    margin-bottom: 25px;
+}
+
+.stat-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+
+/* =========================
+   DASHBOARD GRID
+========================= */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.dashboard-card,
+.subject-card,
+.note-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+
+/* =========================
+   CARD HEADER
+========================= */
+
+.card-header,
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   TASKS
+========================= */
+
+.task-list {
+    list-style: none;
+}
+
+.task-item {
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+
+    display: flex;
+    gap: 10px;
+}
+
+.task-item label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.task-item span {
+    font-size: 13px;
+    color: #777;
+}
+
+
+/* =========================
+   PROGRESS
+========================= */
+
+.progress-container {
+    text-align: center;
+    padding: 30px;
+}
+
+.progress-circle {
+    width: 130px;
+    height: 130px;
+
+    border: 12px solid #4f46e5;
+
+    border-radius: 50%;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================
+   SUBJECTS
+========================= */
+
+.subject-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.subject-card {
+    margin-bottom: 30px;
+}
+
+.subject-progress {
+    margin-top: 20px;
+}
+
+.progress-bar {
+    height: 8px;
+    background: #e5e7eb;
+    border-radius: 10px;
+
+    margin-top: 8px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #4f46e5;
+    border-radius: 10px;
+}
+
+.subject-info {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 15px;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   NOTES
+========================= */
+
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.note-card {
+    margin-bottom: 30px;
+}
+
+.note-subject {
+    font-size: 13px;
+    color: #4f46e5;
+    font-weight: bold;
+}
+
+.note-card p {
+    margin: 10px 0;
+    color: #666;
+}
+
+.note-card small {
+    color: #888;
+}
+
+
+/* =========================
+   SIDEBAR BOTTOM
+========================= */
+
+.sidebar-bottom {
+    margin-top: 50px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .sidebar {
+        display: none;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .statistics {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .subject-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .notes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+}
