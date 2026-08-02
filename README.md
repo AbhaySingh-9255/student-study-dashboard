@@ -51,6 +51,29 @@ JavaScript and additional technologies will be introduced in later stages.
 
 ---
 
+## 🚀 Day 2 — Responsive Dashboard UI
+
+### What I completed
+
+- Created the dashboard layout
+- Added responsive sidebar navigation
+- Added header section
+- Added subject cards
+- Added task section
+- Added progress section
+- Added responsive design for smaller screens
+- Improved overall UI structure and styling
+
+### 🛠️ Technologies Used
+
+- HTML5
+- CSS3
+- Flexbox
+- CSS Grid
+- Responsive Design
+- Git
+- GitHub
+
 ## 📂 Project Structure
 
 ```text
