@@ -74,18 +74,59 @@ JavaScript and additional technologies will be introduced in later stages.
 - Git
 - GitHub
 
-## 📂 Project Structure
+## 🚀 Day 3 — JavaScript & Task Management
+
+### ✅ What I Built
+
+Day 3 focuses on adding JavaScript functionality to the dashboard.
+
+- Added dynamic greeting based on time
+- Added current date dynamically
+- Added study task management
+- Added new task functionality
+- Added task completion functionality
+- Added task deletion functionality
+- Added automatic task counter
+- Added completed task counter
+- Added automatic progress percentage
+- Added animated progress bar
+- Added browser `localStorage`
+- Tasks remain saved after refreshing the page
+- Added Enter-key support for adding tasks
+- Added dynamic DOM manipulation
+- Added JavaScript event listeners
+
+---
+
+## 🛠️ Technologies Used
+
+- HTML5
+- CSS3
+- JavaScript
+- DOM Manipulation
+- JavaScript Events
+- Arrays & Objects
+- LocalStorage
+- JSON
+- Responsive Web Design
+- Git
+- GitHub
+
+---
+
+## 📁 Project Structure
 
 ```text
 Student-Study-Tracker/
 │
 ├── index.html
+├── progress.html
 │
 ├── css/
 │   └── style.css
 │
 ├── js/
-│
-├── assets/
+│   ├── script.js
+│   └── progress.js
 │
 └── README.md
