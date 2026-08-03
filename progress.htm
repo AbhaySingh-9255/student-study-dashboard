@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Progress - StudyTrack</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <aside class="sidebar">
+
+            <div class="logo">
+                🎓 StudyTrack
+            </div>
+
+            <nav class="nav-menu">
+
+                <a
+                    href="index.html"
+                    class="nav-link"
+                >
+                    🏠 Dashboard
+                </a>
+
+                <a
+                    href="index.html#subjects"
+                    class="nav-link"
+                >
+                    📚 Subjects
+                </a>
+
+                <a
+                    href="index.html#tasks"
+                    class="nav-link"
+                >
+                    ✅ Tasks
+                </a>
+
+                <a
+                    href="progress.html"
+                    class="nav-link active"
+                >
+                    📊 Progress
+                </a>
+
+            </nav>
+
+            <div class="sidebar-footer">
+
+                <p>
+                    Day 3 / 10
+                </p>
+
+                <small>
+                    JavaScript Edition 🚀
+                </small>
+
+            </div>
+
+        </aside>
+
+
+        <main class="main-content">
+
+            <header class="header">
+
+                <p class="date">
+                    Student Study Dashboard
+                </p>
+
+                <h1>
+                    Your Progress 📊
+                </h1>
+
+                <p class="subtitle">
+                    Track your study journey.
+                </p>
+
+            </header>
+
+
+            <section class="card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Overall Task Progress
+                        </h2>
+
+                        <p>
+                            Based on your completed tasks
+                        </p>
+
+                    </div>
+
+                    <span
+                        id="progressText"
+                    >
+                        0%
+                    </span>
+
+                </div>
+
+
+                <div class="progress-bar">
+
+                    <div
+                        class="progress-fill"
+                        id="progressFill"
+                    ></div>
+
+                </div>
+
+            </section>
+
+
+            <section class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        📋
+                    </div>
+
+                    <div>
+
+                        <p>
+                            Total Tasks
+                        </p>
+
+                        <h2 id="taskCount">
+                            0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        ✅
+                    </div>
+
+                    <div>
+
+                        <p>
+                            Completed
+                        </p>
+
+                        <h2 id="completedCount">
+                            0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        📈
+                    </div>
+
+                    <div>
+
+                        <p>
+                            Progress
+                        </p>
+
+                        <h2 id="progressPercentage">
+                            0%
+                        </h2>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section class="card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Development Journey 🚀
+                        </h2>
+
+                        <p>
+                            Student Study Dashboard
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="study-tip">
+
+                    <p>
+                        Day 1 — HTML foundation ✅
+                    </p>
+
+                    <br>
+
+                    <p>
+                        Day 2 — Responsive CSS UI ✅
+                    </p>
+
+                    <br>
+
+                    <p>
+                        Day 3 — JavaScript interactions 🔥
+                    </p>
+
+                    <br>
+
+                    <p>
+                        Day 4 — Task management 🔜
+                    </p>
+
+                    <br>
+
+                    <p>
+                        Day 5 — Subjects & Notes 🔜
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <footer class="footer">
+
+                <p>
+                    Student Study Dashboard • Day 3 / 10
+                </p>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <script src="js/progress.js"></script>
+
+</body>
+
+</html>

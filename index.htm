@@ -13,236 +13,138 @@
 
 <body>
 
-    <!-- ============================= -->
-    <!-- DASHBOARD CONTAINER -->
-    <!-- ============================= -->
-
     <div class="dashboard">
 
-        <!-- ============================= -->
-        <!-- SIDEBAR -->
-        <!-- ============================= -->
+        <!-- ================= SIDEBAR ================= -->
 
         <aside class="sidebar">
 
-            <!-- Logo -->
             <div class="logo">
-                <span class="logo-icon">🎓</span>
-                <span class="logo-text">StudyHub</span>
+                🎓 StudyTrack
             </div>
 
-            <!-- Navigation -->
             <nav class="nav-menu">
 
-                <a href="#" class="nav-link active">
-                    <span class="nav-icon">🏠</span>
-                    <span class="nav-text">Dashboard</span>
+                <a href="index.html" class="nav-link active">
+                    🏠 Dashboard
                 </a>
 
-                <a href="#" class="nav-link">
-                    <span class="nav-icon">📚</span>
-                    <span class="nav-text">Subjects</span>
+                <a href="#subjects" class="nav-link">
+                    📚 Subjects
                 </a>
 
-                <a href="#" class="nav-link">
-                    <span class="nav-icon">📝</span>
-                    <span class="nav-text">Notes</span>
+                <a href="#tasks" class="nav-link">
+                    ✅ Tasks
                 </a>
 
-                <a href="#" class="nav-link">
-                    <span class="nav-icon">✅</span>
-                    <span class="nav-text">Tasks</span>
-                </a>
-
-                <a href="#" class="nav-link">
-                    <span class="nav-icon">📊</span>
-                    <span class="nav-text">Progress</span>
-                </a>
-
-                <a href="#" class="nav-link">
-                    <span class="nav-icon">📅</span>
-                    <span class="nav-text">Calendar</span>
+                <a href="progress.html" class="nav-link">
+                    📊 Progress
                 </a>
 
             </nav>
 
-            <!-- Sidebar Bottom -->
-            <div class="sidebar-bottom">
-
-                <a href="#" class="nav-link">
-                    <span class="nav-icon">⚙️</span>
-                    <span class="nav-text">Settings</span>
-                </a>
-
+            <div class="sidebar-footer">
+                <p>Day 3 / 10</p>
+                <small>JavaScript Edition 🚀</small>
             </div>
 
         </aside>
 
 
-        <!-- ============================= -->
-        <!-- MAIN CONTENT -->
-        <!-- ============================= -->
+        <!-- ================= MAIN CONTENT ================= -->
 
         <main class="main-content">
 
-            <!-- ============================= -->
-            <!-- HEADER -->
-            <!-- ============================= -->
+            <!-- Header -->
 
             <header class="header">
 
-                <div class="header-left">
+                <div>
 
-                    <p class="greeting">
-                        Good morning 👋
+                    <p class="date" id="currentDate">
+                        Loading date...
                     </p>
 
-                    <h1 class="page-title">
-                        Student Dashboard
+                    <h1 id="welcomeMessage">
+                        Welcome back 👋
                     </h1>
 
-                    <p class="page-subtitle">
-                        Stay organized. Stay consistent. Keep learning.
+                    <p class="subtitle">
+                        Let's make today productive.
                     </p>
-
-                </div>
-
-
-                <div class="header-right">
-
-                    <button class="notification-btn">
-                        🔔
-                        <span class="notification-dot"></span>
-                    </button>
-
-                    <div class="profile">
-
-                        <div class="profile-avatar">
-                            A
-                        </div>
-
-                        <div class="profile-info">
-                            <span class="profile-name">
-                                Abhay
-                            </span>
-
-                            <span class="profile-role">
-                                BCA Student
-                            </span>
-                        </div>
-
-                    </div>
 
                 </div>
 
             </header>
 
 
-            <!-- ============================= -->
-            <!-- STATISTICS -->
-            <!-- ============================= -->
+            <!-- ================= STATS ================= -->
 
             <section class="stats-grid">
 
-                <!-- Card 1 -->
                 <div class="stat-card">
 
-                    <div class="stat-icon purple">
+                    <div class="stat-icon">
                         📚
                     </div>
 
-                    <div class="stat-content">
+                    <div>
+                        <p>Total Subjects</p>
 
-                        <p class="stat-label">
-                            Total Subjects
-                        </p>
-
-                        <h2 class="stat-value">
-                            6
+                        <h2 id="subjectCount">
+                            4
                         </h2>
-
-                        <p class="stat-change positive">
-                            ↑ 2 this semester
-                        </p>
-
                     </div>
 
                 </div>
 
 
-                <!-- Card 2 -->
                 <div class="stat-card">
 
-                    <div class="stat-icon blue">
+                    <div class="stat-icon">
                         ✅
                     </div>
 
-                    <div class="stat-content">
+                    <div>
+                        <p>Total Tasks</p>
 
-                        <p class="stat-label">
-                            Tasks Completed
-                        </p>
-
-                        <h2 class="stat-value">
-                            24
+                        <h2 id="taskCount">
+                            0
                         </h2>
-
-                        <p class="stat-change positive">
-                            ↑ 12% this week
-                        </p>
-
                     </div>
 
                 </div>
 
 
-                <!-- Card 3 -->
                 <div class="stat-card">
 
-                    <div class="stat-icon green">
+                    <div class="stat-icon">
+                        🎯
+                    </div>
+
+                    <div>
+                        <p>Completed</p>
+
+                        <h2 id="completedCount">
+                            0
+                        </h2>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
                         📈
                     </div>
 
-                    <div class="stat-content">
+                    <div>
+                        <p>Progress</p>
 
-                        <p class="stat-label">
-                            Overall Progress
-                        </p>
-
-                        <h2 class="stat-value">
-                            72%
+                        <h2 id="progressPercentage">
+                            0%
                         </h2>
-
-                        <p class="stat-change positive">
-                            ↑ 8% this month
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Card 4 -->
-                <div class="stat-card">
-
-                    <div class="stat-icon orange">
-                        ⏱️
-                    </div>
-
-                    <div class="stat-content">
-
-                        <p class="stat-label">
-                            Study Hours
-                        </p>
-
-                        <h2 class="stat-value">
-                            18.5h
-                        </h2>
-
-                        <p class="stat-change positive">
-                            ↑ 3.5h this week
-                        </p>
-
                     </div>
 
                 </div>
@@ -250,392 +152,86 @@
             </section>
 
 
-            <!-- ============================= -->
-            <!-- MAIN DASHBOARD GRID -->
-            <!-- ============================= -->
+            <!-- ================= PROGRESS ================= -->
 
-            <section class="dashboard-grid">
+            <section class="card progress-card">
 
+                <div class="card-header">
 
-                <!-- ============================= -->
-                <!-- LEFT COLUMN -->
-                <!-- ============================= -->
+                    <div>
 
-                <div class="left-column">
+                        <h2>
+                            Today's Progress
+                        </h2>
 
-
-                    <!-- ============================= -->
-                    <!-- TODAY'S TASKS -->
-                    <!-- ============================= -->
-
-                    <div class="card">
-
-                        <div class="card-header">
-
-                            <div>
-                                <h2 class="card-title">
-                                    Today's Tasks
-                                </h2>
-
-                                <p class="card-subtitle">
-                                    Keep your daily goals on track
-                                </p>
-                            </div>
-
-                            <button class="view-btn">
-                                View All →
-                            </button>
-
-                        </div>
-
-
-                        <div class="task-list">
-
-                            <!-- Task -->
-                            <div class="task-item">
-
-                                <label class="checkbox-wrapper">
-
-                                    <input type="checkbox" checked>
-
-                                    <span class="custom-checkbox"></span>
-
-                                </label>
-
-                                <div class="task-details">
-
-                                    <p class="task-title completed">
-                                        Complete Java OOPS notes
-                                    </p>
-
-                                    <p class="task-meta">
-                                        📚 Programming in Java
-                                    </p>
-
-                                </div>
-
-                                <span class="task-priority high">
-                                    High
-                                </span>
-
-                            </div>
-
-
-                            <!-- Task -->
-                            <div class="task-item">
-
-                                <label class="checkbox-wrapper">
-
-                                    <input type="checkbox">
-
-                                    <span class="custom-checkbox"></span>
-
-                                </label>
-
-                                <div class="task-details">
-
-                                    <p class="task-title">
-                                        Create UI wireframe
-                                    </p>
-
-                                    <p class="task-meta">
-                                        🎨 UI/UX Designing
-                                    </p>
-
-                                </div>
-
-                                <span class="task-priority medium">
-                                    Medium
-                                </span>
-
-                            </div>
-
-
-                            <!-- Task -->
-                            <div class="task-item">
-
-                                <label class="checkbox-wrapper">
-
-                                    <input type="checkbox">
-
-                                    <span class="custom-checkbox"></span>
-
-                                </label>
-
-                                <div class="task-details">
-
-                                    <p class="task-title">
-                                        Practice numerical problems
-                                    </p>
-
-                                    <p class="task-meta">
-                                        🧮 Numerical Methods
-                                    </p>
-
-                                </div>
-
-                                <span class="task-priority low">
-                                    Low
-                                </span>
-
-                            </div>
-
-
-                            <!-- Task -->
-                            <div class="task-item">
-
-                                <label class="checkbox-wrapper">
-
-                                    <input type="checkbox">
-
-                                    <span class="custom-checkbox"></span>
-
-                                </label>
-
-                                <div class="task-details">
-
-                                    <p class="task-title">
-                                        Revise mobile development
-                                    </p>
-
-                                    <p class="task-meta">
-                                        📱 Mobile Application Development
-                                    </p>
-
-                                </div>
-
-                                <span class="task-priority medium">
-                                    Medium
-                                </span>
-
-                            </div>
-
-                        </div>
+                        <p>
+                            Keep pushing forward!
+                        </p>
 
                     </div>
 
+                    <span id="progressText">
+                        0%
+                    </span>
 
-                    <!-- ============================= -->
-                    <!-- SUBJECTS -->
-                    <!-- ============================= -->
+                </div>
 
-                    <div class="card">
+                <div class="progress-bar">
 
-                        <div class="card-header">
+                    <div class="progress-fill" id="progressFill"></div>
 
-                            <div>
+                </div>
 
-                                <h2 class="card-title">
-                                    My Subjects
-                                </h2>
-
-                                <p class="card-subtitle">
-                                    Track your academic progress
-                                </p>
-
-                            </div>
-
-                            <button class="view-btn">
-                                View All →
-                            </button>
-
-                        </div>
+            </section>
 
 
-                        <div class="subject-grid">
+            <!-- ================= SUBJECTS ================= -->
 
+            <section class="card" id="subjects">
 
-                            <!-- Subject -->
-                            <div class="subject-card">
+                <div class="card-header">
 
-                                <div class="subject-top">
+                    <div>
 
-                                    <div class="subject-icon purple-bg">
-                                        ☕
-                                    </div>
+                        <h2>
+                            My Subjects
+                        </h2>
 
-                                    <span class="subject-progress">
-                                        80%
-                                    </span>
-
-                                </div>
-
-                                <h3>
-                                    Programming in Java
-                                </h3>
-
-                                <p>
-                                    8 / 10 topics completed
-                                </p>
-
-                                <div class="progress-bar">
-
-                                    <div class="progress-fill purple-fill" style="width: 80%;"></div>
-
-                                </div>
-
-                            </div>
-
-
-                            <!-- Subject -->
-                            <div class="subject-card">
-
-                                <div class="subject-top">
-
-                                    <div class="subject-icon blue-bg">
-                                        🎨
-                                    </div>
-
-                                    <span class="subject-progress">
-                                        65%
-                                    </span>
-
-                                </div>
-
-                                <h3>
-                                    UI/UX Design
-                                </h3>
-
-                                <p>
-                                    13 / 20 topics completed
-                                </p>
-
-                                <div class="progress-bar">
-
-                                    <div class="progress-fill blue-fill" style="width: 65%;"></div>
-
-                                </div>
-
-                            </div>
-
-
-                            <!-- Subject -->
-                            <div class="subject-card">
-
-                                <div class="subject-top">
-
-                                    <div class="subject-icon green-bg">
-                                        📊
-                                    </div>
-
-                                    <span class="subject-progress">
-                                        70%
-                                    </span>
-
-                                </div>
-
-                                <h3>
-                                    Data Visualization
-                                </h3>
-
-                                <p>
-                                    14 / 20 topics completed
-                                </p>
-
-                                <div class="progress-bar">
-
-                                    <div class="progress-fill green-fill" style="width: 70%;"></div>
-
-                                </div>
-
-                            </div>
-
-
-                            <!-- Subject -->
-                            <div class="subject-card">
-
-                                <div class="subject-top">
-
-                                    <div class="subject-icon orange-bg">
-                                        📱
-                                    </div>
-
-                                    <span class="subject-progress">
-                                        55%
-                                    </span>
-
-                                </div>
-
-                                <h3>
-                                    Mobile Development
-                                </h3>
-
-                                <p>
-                                    11 / 20 topics completed
-                                </p>
-
-                                <div class="progress-bar">
-
-                                    <div class="progress-fill orange-fill" style="width: 55%;"></div>
-
-                                </div>
-
-                            </div>
-
-                        </div>
+                        <p>
+                            Your current semester subjects
+                        </p>
 
                     </div>
 
                 </div>
 
 
-                <!-- ============================= -->
-                <!-- RIGHT COLUMN -->
-                <!-- ============================= -->
+                <div class="subject-grid">
 
-                <div class="right-column">
+                    <div class="subject-card">
 
-
-                    <!-- ============================= -->
-                    <!-- OVERALL PROGRESS -->
-                    <!-- ============================= -->
-
-                    <div class="card progress-card">
-
-                        <div class="card-header">
-
-                            <div>
-
-                                <h2 class="card-title">
-                                    Overall Progress
-                                </h2>
-
-                                <p class="card-subtitle">
-                                    Semester progress
-                                </p>
-
-                            </div>
-
+                        <div class="subject-icon">
+                            ☕
                         </div>
 
+                        <h3>
+                            Java
+                        </h3>
 
-                        <div class="progress-circle">
+                        <p>
+                            Programming
+                        </p>
 
-                            <div class="circle-content">
+                        <div class="subject-progress">
 
-                                <strong>
-                                    72%
-                                </strong>
+                            <span>
+                                30%
+                            </span>
 
-                                <span>
-                                    Complete
-                                </span>
+                            <div class="mini-progress">
 
-                            </div>
+                                <div class="mini-progress-fill" style="width: 30%"></div>
 
-                        </div>
-
-
-                        <div class="progress-stats">
-
-                            <div>
-                                <strong>42</strong>
-                                <span>Completed</span>
-                            </div>
-
-                            <div>
-                                <strong>18</strong>
-                                <span>Remaining</span>
                             </div>
 
                         </div>
@@ -643,152 +239,93 @@
                     </div>
 
 
-                    <!-- ============================= -->
-                    <!-- RECENT NOTES -->
-                    <!-- ============================= -->
+                    <div class="subject-card">
 
-                    <div class="card">
-
-                        <div class="card-header">
-
-                            <div>
-
-                                <h2 class="card-title">
-                                    Recent Notes
-                                </h2>
-
-                                <p class="card-subtitle">
-                                    Your latest study material
-                                </p>
-
-                            </div>
-
-                            <button class="view-btn">
-                                View All →
-                            </button>
-
+                        <div class="subject-icon">
+                            🧩
                         </div>
 
+                        <h3>
+                            OOP
+                        </h3>
 
-                        <div class="notes-list">
+                        <p>
+                            Object Oriented Programming
+                        </p>
 
+                        <div class="subject-progress">
 
-                            <div class="note-item">
+                            <span>
+                                20%
+                            </span>
 
-                                <div class="note-icon purple-bg">
-                                    ☕
-                                </div>
+                            <div class="mini-progress">
 
-                                <div class="note-info">
-
-                                    <h4>
-                                        Java OOPS
-                                    </h4>
-
-                                    <p>
-                                        Classes & Objects
-                                    </p>
-
-                                    <span>
-                                        2 hours ago
-                                    </span>
-
-                                </div>
+                                <div class="mini-progress-fill" style="width: 20%"></div>
 
                             </div>
-
-
-                            <div class="note-item">
-
-                                <div class="note-icon blue-bg">
-                                    🎨
-                                </div>
-
-                                <div class="note-info">
-
-                                    <h4>
-                                        UI/UX Principles
-                                    </h4>
-
-                                    <p>
-                                        Design Thinking
-                                    </p>
-
-                                    <span>
-                                        Yesterday
-                                    </span>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="note-item">
-
-                                <div class="note-icon green-bg">
-                                    📊
-                                </div>
-
-                                <div class="note-info">
-
-                                    <h4>
-                                        Data Visualization
-                                    </h4>
-
-                                    <p>
-                                        Charts & Graphs
-                                    </p>
-
-                                    <span>
-                                        2 days ago
-                                    </span>
-
-                                </div>
-
-                            </div>
-
 
                         </div>
 
                     </div>
 
 
-                    <!-- ============================= -->
-                    <!-- QUICK ACTIONS -->
-                    <!-- ============================= -->
+                    <div class="subject-card">
 
-                    <div class="card">
+                        <div class="subject-icon">
+                            📊
+                        </div>
 
-                        <div class="card-header">
+                        <h3>
+                            Data Visualisation
+                        </h3>
 
-                            <h2 class="card-title">
-                                Quick Actions
-                            </h2>
+                        <p>
+                            Data & Charts
+                        </p>
+
+                        <div class="subject-progress">
+
+                            <span>
+                                15%
+                            </span>
+
+                            <div class="mini-progress">
+
+                                <div class="mini-progress-fill" style="width: 15%"></div>
+
+                            </div>
 
                         </div>
 
+                    </div>
 
-                        <div class="quick-actions">
 
-                            <button class="quick-action">
-                                <span>➕</span>
-                                Add Task
-                            </button>
+                    <div class="subject-card">
 
-                            <button class="quick-action">
-                                <span>📝</span>
-                                Add Note
-                            </button>
+                        <div class="subject-icon">
+                            📱
+                        </div>
 
-                            <button class="quick-action">
-                                <span>📚</span>
-                                Add Subject
-                            </button>
+                        <h3>
+                            Mobile Development
+                        </h3>
 
-                            <button class="quick-action">
-                                <span>📊</span>
-                                View Progress
-                            </button>
+                        <p>
+                            Android Development
+                        </p>
+
+                        <div class="subject-progress">
+
+                            <span>
+                                10%
+                            </span>
+
+                            <div class="mini-progress">
+
+                                <div class="mini-progress-fill" style="width: 10%"></div>
+
+                            </div>
 
                         </div>
 
@@ -799,18 +336,82 @@
             </section>
 
 
-            <!-- ============================= -->
-            <!-- FOOTER -->
-            <!-- ============================= -->
+            <!-- ================= TASKS ================= -->
+
+            <section class="card" id="tasks">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Study Tasks
+                        </h2>
+
+                        <p>
+                            Manage your daily study goals
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Add Task -->
+
+                <div class="task-input-container">
+
+                    <input type="text" id="taskInput" placeholder="Enter a study task...">
+
+                    <button id="addTaskButton" class="primary-button">
+                        + Add Task
+                    </button>
+
+                </div>
+
+
+                <!-- Task List -->
+
+                <div id="taskList" class="task-list">
+
+                </div>
+
+                <p id="emptyMessage" class="empty-message">
+                    No tasks yet. Add your first study task! 📚
+                </p>
+
+            </section>
+
+
+            <!-- ================= QUICK INFO ================= -->
+
+            <section class="card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Study Tip 💡
+                        </h2>
+
+                    </div>
+
+                </div>
+
+                <p class="study-tip">
+                    Don't try to study everything at once.
+                    Pick one task, finish it, then move to
+                    the next one.
+                </p>
+
+            </section>
+
 
             <footer class="footer">
 
                 <p>
-                    © 2026 Student Study Dashboard
-                </p>
-
-                <p>
-                    Built with HTML & CSS 💻
+                    Student Study Dashboard • Day 3 / 10
                 </p>
 
             </footer>
@@ -821,6 +422,7 @@
 
 
     <!-- JavaScript -->
+
     <script src="js/script.js"></script>
 
 </body>
