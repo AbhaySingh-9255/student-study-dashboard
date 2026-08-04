@@ -1,132 +1,177 @@
-# 🎓 Student Study Dashboard
+# 📚 Student Study Dashboard
 
-A responsive web-based study dashboard designed to help students organize their academic work in one place.
+A modern and responsive **Student Study Dashboard** built to help students organize subjects, manage study tasks, and track their learning progress from one place.
 
-The project is being developed step-by-step over a **10-day development plan**, starting from a basic HTML structure and gradually adding functionality.
-
----
-
-## 🚀 Project Overview
-
-The Student Study Dashboard will provide students with a simple interface to manage:
-
-- 📚 Subjects
-- 📝 Notes
-- ✅ Tasks
-- 📊 Study Progress
-- 📅 Study activities
-
-The goal is to create a clean, responsive, and easy-to-use student productivity dashboard.
+The project is being developed step-by-step as a 10-day web development project, with each day adding new functionality and improving the UI/UX.
 
 ---
 
-## 📌 Day 1 Progress
+## 🚀 Live Project
+
+Coming soon...
+
+---
+
+## 📌 Project Goals
+
+The main goal of this project is to build a practical student productivity platform where students can:
+
+- 📚 Manage subjects
+- 📝 Add and manage study tasks
+- 📊 Track overall study progress
+- 🎯 Track progress subject-wise
+- 📅 Manage deadlines
+- 🔎 Search and filter tasks
+- 📱 Use the dashboard on mobile, tablet, and desktop
+- 🎥 Add learning resources such as YouTube videos in future versions
+- 📈 Track learning progression over time
+
+---
+
+# 🗓️ Development Progress
+
+## ✅ Day 1 — Project Foundation
 
 ### Completed
 
-- [x] Created project structure
-- [x] Created dashboard HTML structure
-- [x] Added sidebar
-- [x] Added navigation/header
-- [x] Added subject section
-- [x] Added notes section
-- [x] Added tasks section
-- [x] Added progress section
-- [x] Created CSS file
-- [x] Connected CSS with HTML
-- [x] Initialized Git repository
-- [x] Created first Git commit
-- [x] Uploaded project to GitHub
+- Created project structure
+- Created dashboard HTML structure
+- Added CSS folder
+- Created initial responsive layout
+- Added basic dashboard sections
+- Created navigation structure
 
----
+### Main concepts learned
 
-## 🛠️ Technologies
-
-Currently using:
-
-- HTML5
-- CSS3
-
-JavaScript and additional technologies will be introduced in later stages.
-
----
-
-## 🚀 Day 2 — Responsive Dashboard UI
-
-### What I completed
-
-- Created the dashboard layout
-- Added responsive sidebar navigation
-- Added header section
-- Added subject cards
-- Added task section
-- Added progress section
-- Added responsive design for smaller screens
-- Improved overall UI structure and styling
-
-### 🛠️ Technologies Used
-
-- HTML5
-- CSS3
+- HTML5 structure
+- Semantic HTML
+- CSS basics
 - Flexbox
 - CSS Grid
-- Responsive Design
-- Git
-- GitHub
-
-## 🚀 Day 3 — JavaScript & Task Management
-
-### ✅ What I Built
-
-Day 3 focuses on adding JavaScript functionality to the dashboard.
-
-- Added dynamic greeting based on time
-- Added current date dynamically
-- Added study task management
-- Added new task functionality
-- Added task completion functionality
-- Added task deletion functionality
-- Added automatic task counter
-- Added completed task counter
-- Added automatic progress percentage
-- Added animated progress bar
-- Added browser `localStorage`
-- Tasks remain saved after refreshing the page
-- Added Enter-key support for adding tasks
-- Added dynamic DOM manipulation
-- Added JavaScript event listeners
+- Basic responsive design
+- Project folder organization
 
 ---
 
-## 🛠️ Technologies Used
+# ✅ Day 2 — Dashboard UI
 
-- HTML5
-- CSS3
-- JavaScript
-- DOM Manipulation
-- JavaScript Events
-- Arrays & Objects
-- LocalStorage
-- JSON
-- Responsive Web Design
-- Git
-- GitHub
+### Completed
+
+Improved the dashboard interface with:
+
+- Modern navigation
+- Dashboard header
+- Subject section
+- Task section
+- Progress section
+- Cards
+- Buttons
+- Responsive layout
+- Better typography
+- Spacing and alignment
+
+### Main concepts learned
+
+- UI hierarchy
+- CSS variables
+- Cards and components
+- Responsive layouts
+- Hover states
+- Reusable CSS classes
 
 ---
 
-## 📁 Project Structure
+# ✅ Day 3 — Task & Progress Functionality
+
+### Completed
+
+Added functionality for:
+
+- Adding study tasks
+- Selecting subjects
+- Setting task priority
+- Adding deadlines
+- Completing tasks
+- Deleting tasks
+- Searching tasks
+- Filtering tasks
+- Calculating completion percentage
+- Saving data using `localStorage`
+
+### Main concepts learned
+
+- JavaScript DOM manipulation
+- Event listeners
+- Arrays and objects
+- Functions
+- `localStorage`
+- Dynamic HTML generation
+- Filtering and searching
+- Basic application state
+
+---
+
+# ✅ Day 4 — Dynamic Subjects
+
+### Completed
+
+The dashboard was upgraded so subjects are no longer fixed.
+
+Students can now:
+
+- ➕ Add subjects
+- 📝 Add subject descriptions
+- 🗑️ Delete subjects
+- 📚 View subjects dynamically
+- 📊 View subject-wise task progress
+- 🔄 Automatically update task subject dropdowns
+
+Subject data is stored using browser `localStorage`.
+
+### Main concepts learned
+
+- Dynamic UI rendering
+- CRUD operations
+- JavaScript state management
+- Local storage
+- Dynamic dropdowns
+- Data relationships between subjects and tasks
+
+---
+
+# ✅ Progress Page — Study Analytics
+
+A dedicated progress page was added to give students a clearer view of their learning progress.
+
+### Features
+
+- 📊 Overall completion percentage
+- 📚 Total subjects
+- 📝 Total tasks
+- ✅ Completed tasks
+- 📈 Subject-wise progress
+- 🕒 Recently completed tasks
+- 📱 Responsive design
+
+The Progress page uses the same `localStorage` data as the main dashboard.
+
+---
+
+# 🧠 Current Architecture
 
 ```text
-Student-Study-Tracker/
+Student Study Dashboard
 │
-├── index.html
-├── progress.html
+├── Dashboard
+│   ├── Subjects
+│   ├── Tasks
+│   └── Overall Progress
 │
-├── css/
-│   └── style.css
+├── Progress Page
+│   ├── Overall Statistics
+│   ├── Subject Progress
+│   └── Recent Activity
 │
-├── js/
-│   ├── script.js
-│   └── progress.js
-│
-└── README.md
+└── LocalStorage
+    ├── Subjects
+    └── Tasks
