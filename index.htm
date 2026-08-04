@@ -6,425 +6,649 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Student Study Dashboard</title>
+    <meta name="description" content="Student Study Dashboard - Organize subjects, tasks and study progress.">
+
+    <title>StudyTrack — Student Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
 </head>
 
+
 <body>
 
-    <div class="dashboard">
+    <div class="app">
+
 
         <!-- ================= SIDEBAR ================= -->
 
         <aside class="sidebar">
 
-            <div class="logo">
-                🎓 StudyTrack
+            <div class="brand">
+
+                <div class="brand-mark">
+                    S
+                </div>
+
+                <div>
+
+                    <strong>
+                        StudyTrack
+                    </strong>
+
+                    <span>
+                        Student workspace
+                    </span>
+
+                </div>
+
             </div>
 
-            <nav class="nav-menu">
 
-                <a href="index.html" class="nav-link active">
-                    🏠 Dashboard
+            <nav class="navigation">
+
+                <p class="nav-label">
+                    WORKSPACE
+                </p>
+
+                <a href="#dashboard" class="nav-item active">
+                    <span>⌂</span>
+                    Dashboard
                 </a>
 
-                <a href="#subjects" class="nav-link">
-                    📚 Subjects
+
+                <a href="#subjects" class="nav-item">
+                    <span>▦</span>
+                    Subjects
                 </a>
 
-                <a href="#tasks" class="nav-link">
-                    ✅ Tasks
+
+                <a href="#tasks" class="nav-item">
+                    <span>✓</span>
+                    Tasks
                 </a>
 
-                <a href="progress.html" class="nav-link">
-                    📊 Progress
+
+                <a href="progress.html" class="nav-item">
+                    <span>↗</span>
+                    Progress
                 </a>
 
             </nav>
 
-            <div class="sidebar-footer">
-                <p>Day 3 / 10</p>
-                <small>JavaScript Edition 🚀</small>
+
+            <div class="sidebar-bottom">
+
+                <div class="semester-card">
+
+                    <span>
+                        CURRENT PLAN
+                    </span>
+
+                    <strong>
+                        Semester Focus
+                    </strong>
+
+                    <small>
+                        Keep moving. One topic at a time.
+                    </small>
+
+                </div>
+
+
+                <div class="sidebar-footer">
+
+                    <span class="status-dot"></span>
+
+                    <span>
+                        StudyTrack v1.0
+                    </span>
+
+                </div>
+
             </div>
 
         </aside>
 
 
-        <!-- ================= MAIN CONTENT ================= -->
 
-        <main class="main-content">
+        <!-- ================= MAIN ================= -->
 
-            <!-- Header -->
-
-            <header class="header">
-
-                <div>
-
-                    <p class="date" id="currentDate">
-                        Loading date...
-                    </p>
-
-                    <h1 id="welcomeMessage">
-                        Welcome back 👋
-                    </h1>
-
-                    <p class="subtitle">
-                        Let's make today productive.
-                    </p>
-
-                </div>
-
-            </header>
+        <main class="main">
 
 
-            <!-- ================= STATS ================= -->
+            <!-- ================= TOPBAR ================= -->
 
-            <section class="stats-grid">
+            <header class="topbar">
 
-                <div class="stat-card">
-
-                    <div class="stat-icon">
-                        📚
-                    </div>
-
-                    <div>
-                        <p>Total Subjects</p>
-
-                        <h2 id="subjectCount">
-                            4
-                        </h2>
-                    </div>
-
-                </div>
+                <button class="mobile-menu" id="mobileMenu" aria-label="Open menu">
+                    ☰
+                </button>
 
 
-                <div class="stat-card">
+                <div class="topbar-title">
 
-                    <div class="stat-icon">
-                        ✅
-                    </div>
-
-                    <div>
-                        <p>Total Tasks</p>
-
-                        <h2 id="taskCount">
-                            0
-                        </h2>
-                    </div>
-
-                </div>
-
-
-                <div class="stat-card">
-
-                    <div class="stat-icon">
-                        🎯
-                    </div>
-
-                    <div>
-                        <p>Completed</p>
-
-                        <h2 id="completedCount">
-                            0
-                        </h2>
-                    </div>
-
-                </div>
-
-
-                <div class="stat-card">
-
-                    <div class="stat-icon">
-                        📈
-                    </div>
-
-                    <div>
-                        <p>Progress</p>
-
-                        <h2 id="progressPercentage">
-                            0%
-                        </h2>
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            <!-- ================= PROGRESS ================= -->
-
-            <section class="card progress-card">
-
-                <div class="card-header">
-
-                    <div>
-
-                        <h2>
-                            Today's Progress
-                        </h2>
-
-                        <p>
-                            Keep pushing forward!
-                        </p>
-
-                    </div>
-
-                    <span id="progressText">
-                        0%
+                    <span id="currentDate">
+                        Loading...
                     </span>
 
                 </div>
 
-                <div class="progress-bar">
 
-                    <div class="progress-fill" id="progressFill"></div>
+                <button class="profile-button" type="button">
 
-                </div>
+                    <span class="avatar">
+                        A
+                    </span>
 
-            </section>
+                    <span class="profile-name">
+                        Student
+                    </span>
+
+                </button>
+
+            </header>
 
 
-            <!-- ================= SUBJECTS ================= -->
 
-            <section class="card" id="subjects">
+            <!-- ================= CONTENT ================= -->
 
-                <div class="card-header">
+            <div class="content">
+
+
+                <!-- ================= HERO ================= -->
+
+                <section class="welcome" id="dashboard">
 
                     <div>
 
-                        <h2>
-                            My Subjects
-                        </h2>
+                        <span class="eyebrow">
+                            STUDY OVERVIEW
+                        </span>
+
+                        <h1 id="welcomeMessage">
+                            Good evening.
+                        </h1>
 
                         <p>
-                            Your current semester subjects
+                            Make your study progress visible.
+                            Stay consistent and keep moving forward.
                         </p>
 
                     </div>
 
-                </div>
 
-
-                <div class="subject-grid">
-
-                    <div class="subject-card">
-
-                        <div class="subject-icon">
-                            ☕
-                        </div>
-
-                        <h3>
-                            Java
-                        </h3>
-
-                        <p>
-                            Programming
-                        </p>
-
-                        <div class="subject-progress">
-
-                            <span>
-                                30%
-                            </span>
-
-                            <div class="mini-progress">
-
-                                <div class="mini-progress-fill" style="width: 30%"></div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="subject-card">
-
-                        <div class="subject-icon">
-                            🧩
-                        </div>
-
-                        <h3>
-                            OOP
-                        </h3>
-
-                        <p>
-                            Object Oriented Programming
-                        </p>
-
-                        <div class="subject-progress">
-
-                            <span>
-                                20%
-                            </span>
-
-                            <div class="mini-progress">
-
-                                <div class="mini-progress-fill" style="width: 20%"></div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="subject-card">
-
-                        <div class="subject-icon">
-                            📊
-                        </div>
-
-                        <h3>
-                            Data Visualisation
-                        </h3>
-
-                        <p>
-                            Data & Charts
-                        </p>
-
-                        <div class="subject-progress">
-
-                            <span>
-                                15%
-                            </span>
-
-                            <div class="mini-progress">
-
-                                <div class="mini-progress-fill" style="width: 15%"></div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="subject-card">
-
-                        <div class="subject-icon">
-                            📱
-                        </div>
-
-                        <h3>
-                            Mobile Development
-                        </h3>
-
-                        <p>
-                            Android Development
-                        </p>
-
-                        <div class="subject-progress">
-
-                            <span>
-                                10%
-                            </span>
-
-                            <div class="mini-progress">
-
-                                <div class="mini-progress-fill" style="width: 10%"></div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            <!-- ================= TASKS ================= -->
-
-            <section class="card" id="tasks">
-
-                <div class="card-header">
-
-                    <div>
-
-                        <h2>
-                            Study Tasks
-                        </h2>
-
-                        <p>
-                            Manage your daily study goals
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Add Task -->
-
-                <div class="task-input-container">
-
-                    <input type="text" id="taskInput" placeholder="Enter a study task...">
-
-                    <button id="addTaskButton" class="primary-button">
-                        + Add Task
+                    <button class="primary-button" id="heroAddSubject">
+                        <span>+</span>
+                        Add subject
                     </button>
 
-                </div>
+                </section>
 
 
-                <!-- Task List -->
 
-                <div id="taskList" class="task-list">
+                <!-- ================= SUBJECTS ================= -->
 
-                </div>
-
-                <p id="emptyMessage" class="empty-message">
-                    No tasks yet. Add your first study task! 📚
-                </p>
-
-            </section>
+                <section class="section">
 
 
-            <!-- ================= QUICK INFO ================= -->
+                    <div class="section-heading">
 
-            <section class="card">
+                        <div>
 
-                <div class="card-header">
+                            <h2>
+                                Your subjects
+                            </h2>
 
-                    <div>
+                            <p>
+                                Quickly see where you stand.
+                            </p>
 
-                        <h2>
-                            Study Tip 💡
-                        </h2>
+                        </div>
+
+
+                        <a href="#subjects" class="text-button">
+                            Manage subjects →
+                        </a>
 
                     </div>
 
-                </div>
 
-                <p class="study-tip">
-                    Don't try to study everything at once.
-                    Pick one task, finish it, then move to
-                    the next one.
-                </p>
-
-            </section>
+                    <div class="subject-grid" id="quickSubjectList">
+                    </div>
 
 
-            <footer class="footer">
+                    <div class="empty-state" id="quickEmptyMessage">
 
-                <p>
-                    Student Study Dashboard • Day 3 / 10
-                </p>
+                        <div class="empty-icon">
+                            +
+                        </div>
 
-            </footer>
+                        <strong>
+                            No subjects yet
+                        </strong>
+
+                        <p>
+                            Add your first subject to start tracking progress.
+                        </p>
+
+                        <button class="secondary-button" id="emptyAddSubject">
+                            Add your first subject
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- ================= STATS ================= -->
+
+                <section class="stats-grid">
+
+
+                    <article class="stat-card">
+
+                        <div class="stat-top">
+
+                            <span>
+                                SUBJECTS
+                            </span>
+
+                            <span class="stat-icon">
+                                ▦
+                            </span>
+
+                        </div>
+
+                        <strong id="subjectCount">
+                            0
+                        </strong>
+
+                        <p>
+                            Active subjects
+                        </p>
+
+                    </article>
+
+
+                    <article class="stat-card">
+
+                        <div class="stat-top">
+
+                            <span>
+                                TOTAL TASKS
+                            </span>
+
+                            <span class="stat-icon">
+                                ✓
+                            </span>
+
+                        </div>
+
+                        <strong id="taskCount">
+                            0
+                        </strong>
+
+                        <p>
+                            Study goals created
+                        </p>
+
+                    </article>
+
+
+                    <article class="stat-card">
+
+                        <div class="stat-top">
+
+                            <span>
+                                COMPLETED
+                            </span>
+
+                            <span class="stat-icon">
+                                ✓
+                            </span>
+
+                        </div>
+
+                        <strong id="completedCount">
+                            0
+                        </strong>
+
+                        <p>
+                            Tasks finished
+                        </p>
+
+                    </article>
+
+
+                    <article class="stat-card">
+
+                        <div class="stat-top">
+
+                            <span>
+                                PROGRESS
+                            </span>
+
+                            <span class="stat-icon">
+                                ↗
+                            </span>
+
+                        </div>
+
+                        <strong id="progressPercentage">
+                            0%
+                        </strong>
+
+                        <p>
+                            Overall completion
+                        </p>
+
+                    </article>
+
+                </section>
+
+
+
+                <!-- ================= PROGRESS ================= -->
+
+                <section class="panel">
+
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                OVERALL PROGRESS
+                            </span>
+
+                            <h2>
+                                Keep the momentum going.
+                            </h2>
+
+                        </div>
+
+
+                        <strong id="progressText" class="progress-value">
+                            0%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="progress-track">
+
+                        <div class="progress-fill" id="progressFill">
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- ================= MANAGE SUBJECTS ================= -->
+
+                <section class="panel" id="subjects">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                SUBJECTS
+                            </span>
+
+                            <h2>
+                                Manage your subjects
+                            </h2>
+
+                            <p>
+                                Add the subjects you're currently studying.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <form class="subject-form" id="subjectForm">
+
+                        <div class="input-group">
+
+                            <label for="subjectNameInput">
+                                Subject name
+                            </label>
+
+                            <input type="text" id="subjectNameInput" placeholder="e.g. Java Programming"
+                                autocomplete="off">
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label for="subjectDescriptionInput">
+                                Description
+                            </label>
+
+                            <input type="text" id="subjectDescriptionInput"
+                                placeholder="e.g. OOP, collections, exceptions..." autocomplete="off">
+
+                        </div>
+
+
+                        <button type="submit" class="primary-button">
+                            Add subject
+                        </button>
+
+                    </form>
+
+
+                    <div class="manage-subject-grid" id="subjectList">
+                    </div>
+
+
+                    <div class="empty-state small" id="emptySubjectMessage">
+                        No subjects added yet.
+                    </div>
+
+                </section>
+
+
+
+                <!-- ================= TASKS ================= -->
+
+                <section class="panel" id="tasks">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                TASKS
+                            </span>
+
+                            <h2>
+                                Study tasks
+                            </h2>
+
+                            <p>
+                                Turn your syllabus into actionable goals.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <form class="task-form" id="taskForm">
+
+                        <div class="input-group task-main-input">
+
+                            <label for="taskInput">
+                                Task
+                            </label>
+
+                            <input type="text" id="taskInput" placeholder="e.g. Complete inheritance chapter">
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label for="subjectInput">
+                                Subject
+                            </label>
+
+                            <select id="subjectInput">
+
+                                <option value="">
+                                    Select subject
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label for="priorityInput">
+                                Priority
+                            </label>
+
+                            <select id="priorityInput">
+
+                                <option value="Low">
+                                    Low
+                                </option>
+
+                                <option value="Medium" selected>
+                                    Medium
+                                </option>
+
+                                <option value="High">
+                                    High
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label for="deadlineInput">
+                                Deadline
+                            </label>
+
+                            <input type="date" id="deadlineInput">
+
+                        </div>
+
+
+                        <button type="submit" class="primary-button">
+                            Add task
+                        </button>
+
+                    </form>
+
+
+
+                    <!-- TASK FILTER -->
+
+                    <div class="task-toolbar">
+
+                        <div class="search-box">
+
+                            <span>
+                                /
+                            </span>
+
+                            <input type="search" id="searchInput" placeholder="Search tasks...">
+
+                        </div>
+
+
+                        <select id="filterInput">
+
+                            <option value="all">
+                                All tasks
+                            </option>
+
+                            <option value="pending">
+                                Pending
+                            </option>
+
+                            <option value="completed">
+                                Completed
+                            </option>
+
+                            <option value="high">
+                                High priority
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="task-list" id="taskList">
+                    </div>
+
+
+                    <div class="empty-state" id="emptyMessage">
+
+                        <div class="empty-icon">
+                            ✓
+                        </div>
+
+                        <strong>
+                            No tasks found
+                        </strong>
+
+                        <p>
+                            Add a study task to see it here.
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- ================= FOOTER ================= -->
+
+                <footer class="footer">
+
+                    <span>
+                        StudyTrack
+                    </span>
+
+                    <span>
+                        Built for focused learning.
+                    </span>
+
+                </footer>
+
+
+            </div>
 
         </main>
 
     </div>
 
 
-    <!-- JavaScript -->
 
     <script src="js/script.js"></script>
 
 </body>
 
-</html>-
+</html>
