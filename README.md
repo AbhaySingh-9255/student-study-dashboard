@@ -175,10 +175,10 @@ Student Study Dashboard
 └── LocalStorage
     ├── Subjects
     └── Tasks
-
 ---
 
-   # 🚀 Day 5 - Syllabus Management
+
+# 🚀 Day 5 - Syllabus Management
 
 ## ✨ New Features
 
@@ -205,7 +205,7 @@ Student Study Dashboard
 - UI State Management
 - Responsive Component Design
 
----
+
 
 ## 📂 Project Structure
 
