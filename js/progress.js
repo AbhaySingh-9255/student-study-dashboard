@@ -13,6 +13,8 @@ const SUBJECTS_KEY =
 const TASKS_KEY =
     "studyTrack_tasks";
 
+const SYLLABUS_KEY="studyTrack_syllabus";
+
 
 /* =========================================================
    2. LOAD DATA
@@ -28,6 +30,13 @@ let subjects =
 let tasks =
     loadData(
         TASKS_KEY,
+        []
+    );
+
+
+let syllabus =
+loadData(
+        SYLLABUS_KEY,
         []
     );
 

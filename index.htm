@@ -1,654 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description" content="Student Study Dashboard - Organize subjects, tasks and study progress.">
-
+    <meta name="description" content="StudyTrack — Student Study Dashboard with Subject, Task & Syllabus Management">
     <title>StudyTrack — Student Dashboard</title>
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-
-
 <body>
 
     <div class="app">
 
-
-        <!-- ================= SIDEBAR ================= -->
-
+        <!-- =========================================
+             SIDEBAR NAVIGATION
+             ========================================= -->
         <aside class="sidebar">
-
-            <div class="brand">
-
-                <div class="brand-mark">
-                    S
+            <div>
+                <div class="brand">
+                    <div class="brand-mark">S</div>
+                    <div>
+                        <strong>StudyTrack</strong>
+                        <span>Student workspace</span>
+                    </div>
                 </div>
 
-                <div>
-
-                    <strong>
-                        StudyTrack
-                    </strong>
-
-                    <span>
-                        Student workspace
-                    </span>
-
-                </div>
-
+                <nav class="navigation">
+                    <p class="nav-label">WORKSPACE</p>
+                    <a href="index.htm" class="nav-item active">
+                        <span>⌂</span> Dashboard
+                    </a>
+                    <a href="#subjects" class="nav-item">
+                        <span>▦</span> Subjects & Syllabus
+                    </a>
+                    <a href="#tasks" class="nav-item">
+                        <span>✓</span> Tasks
+                    </a>
+                    <a href="progress.htm" class="nav-item">
+                        <span>↗</span> Progress
+                    </a>
+                </nav>
             </div>
-
-
-            <nav class="navigation">
-
-                <p class="nav-label">
-                    WORKSPACE
-                </p>
-
-                <a href="#dashboard" class="nav-item active">
-                    <span>⌂</span>
-                    Dashboard
-                </a>
-
-
-                <a href="#subjects" class="nav-item">
-                    <span>▦</span>
-                    Subjects
-                </a>
-
-
-                <a href="#tasks" class="nav-item">
-                    <span>✓</span>
-                    Tasks
-                </a>
-
-
-                <a href="progress.html" class="nav-item">
-                    <span>↗</span>
-                    Progress
-                </a>
-
-            </nav>
-
 
             <div class="sidebar-bottom">
-
                 <div class="semester-card">
-
-                    <span>
-                        CURRENT PLAN
-                    </span>
-
-                    <strong>
-                        Semester Focus
-                    </strong>
-
-                    <small>
-                        Keep moving. One topic at a time.
-                    </small>
-
+                    <span>CURRENT PLAN</span>
+                    <strong>Semester Focus</strong>
+                    <small>Keep moving. One topic at a time.</small>
                 </div>
-
 
                 <div class="sidebar-footer">
-
                     <span class="status-dot"></span>
-
-                    <span>
-                        StudyTrack v1.0
-                    </span>
-
+                    <span>StudyTrack v1.0 • Day 5</span>
                 </div>
-
             </div>
-
         </aside>
 
-
-
-        <!-- ================= MAIN ================= -->
-
+        <!-- =========================================
+             MAIN CONTENT
+             ========================================= -->
         <main class="main">
 
-
-            <!-- ================= TOPBAR ================= -->
-
+            <!-- Topbar Header -->
             <header class="topbar">
-
-                <button class="mobile-menu" id="mobileMenu" aria-label="Open menu">
-                    ☰
-                </button>
-
-
-                <div class="topbar-title">
-
-                    <span id="currentDate">
-                        Loading...
-                    </span>
-
-                </div>
-
-
+                <button class="mobile-menu" id="mobileMenu" aria-label="Open navigation menu">☰</button>
+                <div class="topbar-title">Dashboard Overview</div>
+                
                 <button class="profile-button" type="button">
-
-                    <span class="avatar">
-                        A
-                    </span>
-
-                    <span class="profile-name">
-                        Student
-                    </span>
-
+                    <span class="avatar">A</span>
+                    <span class="profile-name">Student</span>
                 </button>
-
             </header>
-
-
-
-            <!-- ================= CONTENT ================= -->
 
             <div class="content">
 
-
-                <!-- ================= HERO ================= -->
-
-                <section class="welcome" id="dashboard">
-
+                <!-- Hero Header -->
+                <section class="hero">
                     <div>
-
-                        <span class="eyebrow">
-                            STUDY OVERVIEW
-                        </span>
-
-                        <h1 id="welcomeMessage">
-                            Good evening.
-                        </h1>
-
-                        <p>
-                            Make your study progress visible.
-                            Stay consistent and keep moving forward.
-                        </p>
-
+                        <span class="eyebrow">DASHBOARD</span>
+                        <h1 id="welcomeMessage">Good day.</h1>
+                        <p id="currentDate">Today</p>
                     </div>
-
-
-                    <button class="primary-button" id="heroAddSubject">
-                        <span>+</span>
-                        Add subject
-                    </button>
-
-                </section>
-
-
-
-                <!-- ================= SUBJECTS ================= -->
-
-                <section class="section">
-
-
-                    <div class="section-heading">
-
-                        <div>
-
-                            <h2>
-                                Your subjects
-                            </h2>
-
-                            <p>
-                                Quickly see where you stand.
-                            </p>
-
-                        </div>
-
-
-                        <a href="#subjects" class="text-button">
-                            Manage subjects →
+                    <div class="hero-actions">
+                        <button class="primary-button" id="heroAddSubject" type="button">
+                            <span>+</span> Add Subject
+                        </button>
+                        <a href="progress.htm" class="secondary-button">
+                            <span>↗</span> View Progress
                         </a>
-
                     </div>
-
-
-                    <div class="subject-grid" id="quickSubjectList">
-                    </div>
-
-
-                    <div class="empty-state" id="quickEmptyMessage">
-
-                        <div class="empty-icon">
-                            +
-                        </div>
-
-                        <strong>
-                            No subjects yet
-                        </strong>
-
-                        <p>
-                            Add your first subject to start tracking progress.
-                        </p>
-
-                        <button class="secondary-button" id="emptyAddSubject">
-                            Add your first subject
-                        </button>
-
-                    </div>
-
                 </section>
 
-
-
-                <!-- ================= STATS ================= -->
-
+                <!-- Statistics Overview Grid -->
                 <section class="stats-grid">
-
-
-                    <article class="stat-card">
-
-                        <div class="stat-top">
-
-                            <span>
-                                SUBJECTS
-                            </span>
-
-                            <span class="stat-icon">
-                                ▦
-                            </span>
-
+                    <div class="stat-card">
+                        <div class="stat-card-top">
+                            <span class="stat-card-title">Total Subjects</span>
+                            <div class="stat-icon">▦</div>
                         </div>
-
-                        <strong id="subjectCount">
-                            0
-                        </strong>
-
-                        <p>
-                            Active subjects
-                        </p>
-
-                    </article>
-
-
-                    <article class="stat-card">
-
-                        <div class="stat-top">
-
-                            <span>
-                                TOTAL TASKS
-                            </span>
-
-                            <span class="stat-icon">
-                                ✓
-                            </span>
-
-                        </div>
-
-                        <strong id="taskCount">
-                            0
-                        </strong>
-
-                        <p>
-                            Study goals created
-                        </p>
-
-                    </article>
-
-
-                    <article class="stat-card">
-
-                        <div class="stat-top">
-
-                            <span>
-                                COMPLETED
-                            </span>
-
-                            <span class="stat-icon">
-                                ✓
-                            </span>
-
-                        </div>
-
-                        <strong id="completedCount">
-                            0
-                        </strong>
-
-                        <p>
-                            Tasks finished
-                        </p>
-
-                    </article>
-
-
-                    <article class="stat-card">
-
-                        <div class="stat-top">
-
-                            <span>
-                                PROGRESS
-                            </span>
-
-                            <span class="stat-icon">
-                                ↗
-                            </span>
-
-                        </div>
-
-                        <strong id="progressPercentage">
-                            0%
-                        </strong>
-
-                        <p>
-                            Overall completion
-                        </p>
-
-                    </article>
-
-                </section>
-
-
-
-                <!-- ================= PROGRESS ================= -->
-
-                <section class="panel">
-
-
-                    <div class="panel-header">
-
-                        <div>
-
-                            <span class="eyebrow">
-                                OVERALL PROGRESS
-                            </span>
-
-                            <h2>
-                                Keep the momentum going.
-                            </h2>
-
-                        </div>
-
-
-                        <strong id="progressText" class="progress-value">
-                            0%
-                        </strong>
-
+                        <div class="stat-value" id="subjectCount">0</div>
+                        <div class="stat-footer">Active study subjects</div>
                     </div>
 
-
-                    <div class="progress-track">
-
-                        <div class="progress-fill" id="progressFill">
+                    <div class="stat-card">
+                        <div class="stat-card-top">
+                            <span class="stat-card-title">Total Tasks</span>
+                            <div class="stat-icon">✓</div>
                         </div>
-
+                        <div class="stat-value" id="taskCount">0</div>
+                        <div class="stat-footer"><span id="completedCount">0</span> completed</div>
                     </div>
 
+                    <div class="stat-card">
+                        <div class="stat-card-top">
+                            <span class="stat-card-title">Task Completion</span>
+                            <div class="stat-icon">%</div>
+                        </div>
+                        <div class="stat-value" id="progressPercentage">0%</div>
+                        <div class="progress-track" style="margin-top: 8px;">
+                            <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-card-top">
+                            <span class="stat-card-title">Syllabus Completion</span>
+                            <div class="stat-icon">📚</div>
+                        </div>
+                        <div class="stat-value" id="syllabusProgressPercent">0%</div>
+                        <div class="stat-footer"><span id="syllabusCompletedTopics">0</span> / <span id="syllabusTotalTopics">0</span> topics covered</div>
+                    </div>
                 </section>
 
-
-
-                <!-- ================= MANAGE SUBJECTS ================= -->
-
+                <!-- =========================================
+                     SUBJECTS & SYLLABUS MANAGEMENT SECTION
+                     ========================================= -->
                 <section class="panel" id="subjects">
-
                     <div class="panel-header">
-
                         <div>
-
-                            <span class="eyebrow">
-                                SUBJECTS
-                            </span>
-
-                            <h2>
-                                Manage your subjects
-                            </h2>
-
-                            <p>
-                                Add the subjects you're currently studying.
-                            </p>
-
+                            <span class="eyebrow">SUBJECTS & SYLLABUS</span>
+                            <h2>Subject Syllabus Cards</h2>
+                            <p>Manage your subjects and track syllabus topic completion.</p>
                         </div>
-
                     </div>
 
-
-                    <form class="subject-form" id="subjectForm">
-
-                        <div class="input-group">
-
-                            <label for="subjectNameInput">
-                                Subject name
-                            </label>
-
-                            <input type="text" id="subjectNameInput" placeholder="e.g. Java Programming"
-                                autocomplete="off">
-
-                        </div>
-
-
-                        <div class="input-group">
-
-                            <label for="subjectDescriptionInput">
-                                Description
-                            </label>
-
-                            <input type="text" id="subjectDescriptionInput"
-                                placeholder="e.g. OOP, collections, exceptions..." autocomplete="off">
-
-                        </div>
-
-
-                        <button type="submit" class="primary-button">
-                            Add subject
-                        </button>
-
-                    </form>
-
-
-                    <div class="manage-subject-grid" id="subjectList">
+                    <!-- Subject Cards Container with Embedded Syllabus -->
+                    <div class="subject-grid" id="quickSubjectList">
+                        <!-- Dynamic Subject Cards rendered by script.js & syllabus.js -->
                     </div>
 
-
-                    <div class="empty-state small" id="emptySubjectMessage">
-                        No subjects added yet.
+                    <!-- Empty State for Subject Cards -->
+                    <div class="empty-state" id="quickEmptyMessage" style="display: none;">
+                        <div class="empty-icon">▦</div>
+                        <strong>No subjects added yet</strong>
+                        <p>Create a subject below to start managing syllabus topics and tasks.</p>
+                        <button class="primary-button" id="emptyAddSubject" type="button">+ Add Subject</button>
                     </div>
 
+                    <!-- Add Subject Form -->
+                    <div style="border-top: 1px solid var(--border); padding-top: 20px; margin-top: 10px;">
+                        <h3 style="font-size: 15px; font-weight: 700; margin-bottom: 12px;">Add New Subject</h3>
+                        <form id="subjectForm" class="form-grid">
+                            <div class="form-group">
+                                <label for="subjectNameInput">Subject Name *</label>
+                                <input type="text" id="subjectNameInput" class="input" placeholder="e.g. Java, Python, Data Structures" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="subjectDescriptionInput">Description</label>
+                                <input type="text" id="subjectDescriptionInput" class="input" placeholder="e.g. Object Oriented Programming" />
+                            </div>
+                            <div class="form-group" style="justify-content: flex-end;">
+                                <label>&nbsp;</label>
+                                <button type="submit" class="primary-button">+ Create Subject</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Existing Subjects List for quick deletion/management -->
+                    <div style="margin-top: 16px;">
+                        <h4 style="font-size: 12px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 8px;">Managed Subjects</h4>
+                        <div class="subject-manage-list" id="subjectList"></div>
+                        <div class="empty-state" id="emptySubjectMessage" style="display: none; padding: 16px;">
+                            <p>No subjects in list.</p>
+                        </div>
+                    </div>
                 </section>
 
-
-
-                <!-- ================= TASKS ================= -->
-
+                <!-- =========================================
+                     TASK MANAGEMENT SECTION
+                     ========================================= -->
                 <section class="panel" id="tasks">
-
                     <div class="panel-header">
-
                         <div>
-
-                            <span class="eyebrow">
-                                TASKS
-                            </span>
-
-                            <h2>
-                                Study tasks
-                            </h2>
-
-                            <p>
-                                Turn your syllabus into actionable goals.
-                            </p>
-
+                            <span class="eyebrow">TASKS</span>
+                            <h2>Task Management</h2>
+                            <p>Add study goals, homework, and lab assignments.</p>
                         </div>
-
                     </div>
 
-
-                    <form class="task-form" id="taskForm">
-
-                        <div class="input-group task-main-input">
-
-                            <label for="taskInput">
-                                Task
-                            </label>
-
-                            <input type="text" id="taskInput" placeholder="e.g. Complete inheritance chapter">
-
+                    <!-- Add Task Form -->
+                    <form id="taskForm" class="form-grid">
+                        <div class="form-group">
+                            <label for="taskInput">Task Title *</label>
+                            <input type="text" id="taskInput" class="input" placeholder="e.g. Practice Array Problems" required />
                         </div>
-
-
-                        <div class="input-group">
-
-                            <label for="subjectInput">
-                                Subject
-                            </label>
-
-                            <select id="subjectInput">
-
-                                <option value="">
-                                    Select subject
-                                </option>
-
+                        <div class="form-group">
+                            <label for="subjectInput">Subject *</label>
+                            <select id="subjectInput" class="select" required>
+                                <option value="">Select subject</option>
                             </select>
-
                         </div>
-
-
-                        <div class="input-group">
-
-                            <label for="priorityInput">
-                                Priority
-                            </label>
-
-                            <select id="priorityInput">
-
-                                <option value="Low">
-                                    Low
-                                </option>
-
-                                <option value="Medium" selected>
-                                    Medium
-                                </option>
-
-                                <option value="High">
-                                    High
-                                </option>
-
+                        <div class="form-group">
+                            <label for="priorityInput">Priority</label>
+                            <select id="priorityInput" class="select">
+                                <option value="High">High</option>
+                                <option value="Medium" selected>Medium</option>
+                                <option value="Low">Low</option>
                             </select>
-
                         </div>
-
-
-                        <div class="input-group">
-
-                            <label for="deadlineInput">
-                                Deadline
-                            </label>
-
-                            <input type="date" id="deadlineInput">
-
+                        <div class="form-group">
+                            <label for="deadlineInput">Due Date</label>
+                            <input type="date" id="deadlineInput" class="input" />
                         </div>
-
-
-                        <button type="submit" class="primary-button">
-                            Add task
-                        </button>
-
+                        <div class="form-group full-width" style="display: flex; justify-content: flex-end;">
+                            <button type="submit" class="primary-button">+ Add Task</button>
+                        </div>
                     </form>
 
-
-
-                    <!-- TASK FILTER -->
-
-                    <div class="task-toolbar">
-
-                        <div class="search-box">
-
-                            <span>
-                                /
-                            </span>
-
-                            <input type="search" id="searchInput" placeholder="Search tasks...">
-
-                        </div>
-
-
-                        <select id="filterInput">
-
-                            <option value="all">
-                                All tasks
-                            </option>
-
-                            <option value="pending">
-                                Pending
-                            </option>
-
-                            <option value="completed">
-                                Completed
-                            </option>
-
-                            <option value="high">
-                                High priority
-                            </option>
-
+                    <!-- Search and Filter Controls -->
+                    <div class="task-controls">
+                        <input type="text" id="searchInput" class="input" placeholder="🔍 Search tasks..." />
+                        <select id="filterInput" class="select">
+                            <option value="all">All Tasks</option>
+                            <option value="pending">Pending</option>
+                            <option value="completed">Completed</option>
+                            <option value="high">High Priority</option>
                         </select>
-
                     </div>
 
+                    <!-- Task List -->
+                    <div class="task-list" id="taskList"></div>
 
-                    <div class="task-list" id="taskList">
+                    <!-- Empty Task Message -->
+                    <div class="empty-state" id="emptyMessage" style="display: none;">
+                        <div class="empty-icon">✓</div>
+                        <strong>No tasks found</strong>
+                        <p>Add your first study task above to start tracking your progress.</p>
                     </div>
-
-
-                    <div class="empty-state" id="emptyMessage">
-
-                        <div class="empty-icon">
-                            ✓
-                        </div>
-
-                        <strong>
-                            No tasks found
-                        </strong>
-
-                        <p>
-                            Add a study task to see it here.
-                        </p>
-
-                    </div>
-
                 </section>
 
-
-
-                <!-- ================= FOOTER ================= -->
-
+                <!-- Footer -->
                 <footer class="footer">
-
-                    <span>
-                        StudyTrack
-                    </span>
-
-                    <span>
-                        Built for focused learning.
-                    </span>
-
+                    <span>StudyTrack — Day 5 Syllabus Release</span>
+                    <span>Built for focused learning.</span>
                 </footer>
 
-
             </div>
-
         </main>
-
     </div>
 
-
-
+    <!-- Scripts -->
+    <script src="js/syllabus.js"></script>
     <script src="js/script.js"></script>
-
 </body>
-
 </html>
