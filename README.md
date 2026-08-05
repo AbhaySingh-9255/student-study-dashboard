@@ -1,213 +1,91 @@
 # 📚 Student Study Dashboard
 
-A modern and responsive **Student Study Dashboard** built to help students organize subjects, manage study tasks, and track their learning progress from one place.
-
-The project is being developed step-by-step as a 10-day web development project, with each day adding new functionality and improving the UI/UX.
+> A modern, responsive, and feature-rich Student Study Dashboard built using **HTML**, **CSS**, and **JavaScript** to help students manage subjects, organize study tasks, track syllabus progress, and improve productivity.
 
 ---
 
-## 🚀 Live Project
+# 🚀 Project Overview
 
-Coming soon...
+The **Student Study Dashboard** is a personal productivity web application designed for students. It helps organize academic work in one place with an intuitive interface and local data storage.
+
+## 🎯 Goals
+
+- 📚 Manage Subjects
+- 📝 Create & Track Study Tasks
+- 📖 Manage Subject-wise Syllabus
+- 📊 Monitor Learning Progress
+- 🔍 Search & Filter Tasks
+- 📱 Responsive Design
+- 💾 Save Data with LocalStorage
+- 🎥 Future YouTube Learning Integration
 
 ---
 
-## 📌 Project Goals
+# ✨ Features
 
-The main goal of this project is to build a practical student productivity platform where students can:
+## 📚 Subject Management
 
-- 📚 Manage subjects
-- 📝 Add and manage study tasks
-- 📊 Track overall study progress
-- 🎯 Track progress subject-wise
-- 📅 Manage deadlines
-- 🔎 Search and filter tasks
-- 📱 Use the dashboard on mobile, tablet, and desktop
-- 🎥 Add learning resources such as YouTube videos in future versions
-- 📈 Track learning progression over time
+- Add unlimited subjects
+- Delete subjects
+- Subject descriptions
+- Dynamic subject cards
+
+---
+
+## 📝 Task Management
+
+- Add tasks
+- Delete tasks
+- Mark tasks as completed
+- Set priorities
+- Add deadlines
+- Search tasks
+- Filter tasks
+
+---
+
+## 📖 Syllabus Management (Day 5)
+
+- Add syllabus topics
+- Edit topics
+- Delete topics
+- Mark topics completed
+- Mark topics pending
+- Subject-wise syllabus
+- Dynamic syllabus progress
+
+---
+
+## 📊 Progress Analytics
+
+- Overall Progress
+- Subject Progress
+- Total Subjects
+- Total Tasks
+- Completed Tasks
+- Pending Tasks
+- Progress Dashboard
 
 ---
 
 # 🗓️ Development Progress
 
-## ✅ Day 1 — Project Foundation
-
-### Completed
-
-- Created project structure
-- Created dashboard HTML structure
-- Added CSS folder
-- Created initial responsive layout
-- Added basic dashboard sections
-- Created navigation structure
-
-### Main concepts learned
-
-- HTML5 structure
-- Semantic HTML
-- CSS basics
-- Flexbox
-- CSS Grid
-- Basic responsive design
-- Project folder organization
+| Day | Feature | Status |
+|------|---------|--------|
+| ✅ Day 1 | Project Setup & Folder Structure | Completed |
+| ✅ Day 2 | Dashboard UI & Responsive Design | Completed |
+| ✅ Day 3 | Task Management System | Completed |
+| ✅ Day 4 | Dynamic Subject Management | Completed |
+| ✅ Day 5 | Syllabus Management | Completed |
+| 🚧 Day 6 | YouTube Learning Tracker | Coming Soon |
+| 🚧 Day 7 | Notes Management | Coming Soon |
+| 🚧 Day 8 | Study Planner & Calendar | Coming Soon |
+| 🚧 Day 9 | Authentication | Coming Soon |
+| 🚧 Day 10 | Backend & Deployment | Coming Soon |
 
 ---
 
-# ✅ Day 2 — Dashboard UI
-
-### Completed
-
-Improved the dashboard interface with:
-
-- Modern navigation
-- Dashboard header
-- Subject section
-- Task section
-- Progress section
-- Cards
-- Buttons
-- Responsive layout
-- Better typography
-- Spacing and alignment
-
-### Main concepts learned
-
-- UI hierarchy
-- CSS variables
-- Cards and components
-- Responsive layouts
-- Hover states
-- Reusable CSS classes
-
----
-
-# ✅ Day 3 — Task & Progress Functionality
-
-### Completed
-
-Added functionality for:
-
-- Adding study tasks
-- Selecting subjects
-- Setting task priority
-- Adding deadlines
-- Completing tasks
-- Deleting tasks
-- Searching tasks
-- Filtering tasks
-- Calculating completion percentage
-- Saving data using `localStorage`
-
-### Main concepts learned
-
-- JavaScript DOM manipulation
-- Event listeners
-- Arrays and objects
-- Functions
-- `localStorage`
-- Dynamic HTML generation
-- Filtering and searching
-- Basic application state
-
----
-
-# ✅ Day 4 — Dynamic Subjects
-
-### Completed
-
-The dashboard was upgraded so subjects are no longer fixed.
-
-Students can now:
-
-- ➕ Add subjects
-- 📝 Add subject descriptions
-- 🗑️ Delete subjects
-- 📚 View subjects dynamically
-- 📊 View subject-wise task progress
-- 🔄 Automatically update task subject dropdowns
-
-Subject data is stored using browser `localStorage`.
-
-### Main concepts learned
-
-- Dynamic UI rendering
-- CRUD operations
-- JavaScript state management
-- Local storage
-- Dynamic dropdowns
-- Data relationships between subjects and tasks
-
----
-
-# ✅ Progress Page — Study Analytics
-
-A dedicated progress page was added to give students a clearer view of their learning progress.
-
-### Features
-
-- 📊 Overall completion percentage
-- 📚 Total subjects
-- 📝 Total tasks
-- ✅ Completed tasks
-- 📈 Subject-wise progress
-- 🕒 Recently completed tasks
-- 📱 Responsive design
-
-The Progress page uses the same `localStorage` data as the main dashboard.
-
----
-
-# 🧠 Current Architecture
-
-```text
-Student Study Dashboard
-│
-├── Dashboard
-│   ├── Subjects
-│   ├── Tasks
-│   └── Overall Progress
-│
-├── Progress Page
-│   ├── Overall Statistics
-│   ├── Subject Progress
-│   └── Recent Activity
-│
-└── LocalStorage
-    ├── Subjects
-    └── Tasks
----
-
-
-# 🚀 Day 5 - Syllabus Management
-
-## ✨ New Features
-
-- 📖 Dynamic Syllabus Management
-- ➕ Add unlimited syllabus topics
-- ✏️ Edit syllabus topics
-- 🗑️ Delete syllabus topics
-- ✅ Mark topics as completed
-- 🔄 Mark topics as incomplete
-- 📊 Subject-wise syllabus progress
-- 📈 Overall syllabus progress
-- 💾 LocalStorage support
-- 📱 Responsive UI
-
----
-
-## 🧠 What I Learned
-
-- CRUD Operations
-- Dynamic DOM Manipulation
-- JavaScript Objects & Arrays
-- LocalStorage Management
-- Modular JavaScript
-- UI State Management
-- Responsive Component Design
-
-
-
-## 📂 Project Structure
+# 📂 Project Structure
 
 ```text
 Student-Study-Tracker
@@ -228,38 +106,158 @@ Student-Study-Tracker
 
 ---
 
-## 📦 Local Storage
+# 🧠 Current Architecture
 
+```text
+Student Study Dashboard
+│
+├── Dashboard
+│   ├── Subjects
+│   ├── Tasks
+│   ├── Syllabus
+│   └── Progress
+│
+├── Progress Page
+│   ├── Overall Statistics
+│   ├── Subject Progress
+│   └── Study Analytics
+│
+└── LocalStorage
+    ├── studyTrack_subjects
+    ├── studyTrack_tasks
+    └── studyTrack_syllabus
 ```
+
+---
+
+# 💾 Local Storage
+
+```text
 studyTrack_subjects
-
 studyTrack_tasks
-
 studyTrack_syllabus
 ```
 
 ---
 
-## 🚀 Features Completed
+# 🛠️ Tech Stack
 
-- ✅ Responsive Dashboard
-- ✅ Dynamic Subjects
-- ✅ Subject Description
-- ✅ Task Manager
-- ✅ Search Tasks
-- ✅ Filter Tasks
-- ✅ Progress Tracking
-- ✅ LocalStorage
-- ✅ Syllabus Management
+| Technology | Purpose |
+|------------|---------|
+| HTML5 | Structure |
+| CSS3 | Styling |
+| JavaScript (ES6) | Application Logic |
+| LocalStorage | Data Persistence |
+| Git | Version Control |
+| GitHub | Repository Hosting |
 
 ---
 
-## 🔜 Coming Next
+# 📈 Current Progress
 
-### Day 6
+```text
+█████████████████████████░░░░░░░░ 50%
 
-- 🎥 Add YouTube Learning Videos
-- 📺 Track Watch Progress
-- 📚 Link Videos to Subjects
-- 📊 Video Completion Analytics
-- ⏱ Study Time Tracking
+✅ Day 1
+✅ Day 2
+✅ Day 3
+✅ Day 4
+✅ Day 5
+⏳ Day 6
+⏳ Day 7
+⏳ Day 8
+⏳ Day 9
+⏳ Day 10
+```
+
+---
+
+# 🚀 Upcoming Features
+
+## 🎥 Day 6
+
+- Add YouTube Learning Videos
+- Track Watch Progress
+- Link Videos to Subjects
+- Video Completion Analytics
+- Study Time Tracking
+
+## 📒 Day 7
+
+- Smart Notes Management
+- Rich Text Notes
+- Download Notes
+
+## 📅 Day 8
+
+- Study Planner
+- Calendar View
+- Daily Goals
+
+## 🔐 Day 9
+
+- User Authentication
+- Login & Registration
+- Cloud Sync
+
+## ☁️ Day 10
+
+- Firebase Backend
+- User Accounts
+- Cloud Database
+- Deployment
+
+---
+
+# 🚀 Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/AbhaySingh-9255/student-study-dashboard.git
+```
+
+Open the project:
+
+```bash
+cd student-study-dashboard
+```
+
+Run using **Live Server** in Visual Studio Code.
+
+---
+
+# 📸 Screenshots
+
+> Add screenshots here after each major update.
+
+### Dashboard
+
+![Dashboard Screenshot](images/dashboard.png)
+
+### Progress Page
+
+![Progress Screenshot](images/progress.png)
+
+### Syllabus Management
+
+![Syllabus Screenshot](images/syllabus.png)
+
+---
+
+# 👨‍💻 Developer
+
+**Abhay Singh**
+
+🎓 BCA Student  
+💻 Web Developer  
+🤖 AI Enthusiast  
+🏆 Hackathon Learner
+
+---
+
+# ⭐ Support
+
+If you found this project helpful, please consider giving it a **⭐ Star** on GitHub.
+
+It motivates me to continue improving the project and adding new features.
