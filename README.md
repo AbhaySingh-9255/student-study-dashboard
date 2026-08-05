@@ -175,3 +175,89 @@ Student Study Dashboard
 └── LocalStorage
     ├── Subjects
     └── Tasks
+
+# 🚀 Day 5 - Syllabus Management
+
+## ✨ New Features
+
+- 📖 Dynamic Syllabus Management
+- ➕ Add unlimited syllabus topics
+- ✏️ Edit syllabus topics
+- 🗑️ Delete syllabus topics
+- ✅ Mark topics as completed
+- 🔄 Mark topics as incomplete
+- 📊 Subject-wise syllabus progress
+- 📈 Overall syllabus progress
+- 💾 LocalStorage support
+- 📱 Responsive UI
+
+---
+
+## 🧠 What I Learned
+
+- CRUD Operations
+- Dynamic DOM Manipulation
+- JavaScript Objects & Arrays
+- LocalStorage Management
+- Modular JavaScript
+- UI State Management
+- Responsive Component Design
+
+---
+
+## 📂 Project Structure
+
+```text
+Student-Study-Tracker
+│
+├── index.htm
+├── progress.htm
+│
+├── css
+│   └── style.css
+│
+├── js
+│   ├── script.js
+│   ├── syllabus.js
+│   └── progress.js
+│
+└── README.md
+```
+
+---
+
+## 📦 Local Storage
+
+```
+studyTrack_subjects
+
+studyTrack_tasks
+
+studyTrack_syllabus
+```
+
+---
+
+## 🚀 Features Completed
+
+- ✅ Responsive Dashboard
+- ✅ Dynamic Subjects
+- ✅ Subject Description
+- ✅ Task Manager
+- ✅ Search Tasks
+- ✅ Filter Tasks
+- ✅ Progress Tracking
+- ✅ LocalStorage
+- ✅ Syllabus Management
+
+---
+
+## 🔜 Coming Next
+
+### Day 6
+
+- 🎥 Add YouTube Learning Videos
+- 📺 Track Watch Progress
+- 📚 Link Videos to Subjects
+- 📊 Video Completion Analytics
+- ⏱ Study Time Tracking
