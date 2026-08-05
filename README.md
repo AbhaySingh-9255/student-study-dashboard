@@ -176,7 +176,9 @@ Student Study Dashboard
     ├── Subjects
     └── Tasks
 
-# 🚀 Day 5 - Syllabus Management
+---
+
+   # 🚀 Day 5 - Syllabus Management
 
 ## ✨ New Features
 
