@@ -1,8 +1,8 @@
 /**
- * StudyTrack — System Data Backup & Restore Module
+ * StudyTrack — System Data Backup Engine
  */
 
-const STORAGE_KEYS = [
+const BACKUP_KEYS = [
     'studyTrack_subjects',
     'studyTrack_tasks',
     'studyTrack_syllabus',
@@ -23,7 +23,7 @@ window.closeBackupModal = function() {
 
 window.exportSystemData = function() {
     const exportObject = {};
-    STORAGE_KEYS.forEach(key => {
+    BACKUP_KEYS.forEach(key => {
         try {
             const raw = localStorage.getItem(key);
             exportObject[key] = raw ? JSON.parse(raw) : [];
@@ -49,15 +49,15 @@ window.importSystemData = function(event) {
     reader.onload = function(e) {
         try {
             const data = JSON.parse(e.target.result);
-            STORAGE_KEYS.forEach(key => {
+            BACKUP_KEYS.forEach(key => {
                 if (data[key]) {
                     localStorage.setItem(key, JSON.stringify(data[key]));
                 }
             });
-            alert("Backup restored successfully! Reloading workspace...");
+            alert("Backup restored successfully!");
             window.location.reload();
         } catch (err) {
-            alert("Error importing file. Make sure it is a valid StudyTrack JSON file.");
+            alert("Error importing JSON file.");
         }
     };
     reader.readAsText(file);

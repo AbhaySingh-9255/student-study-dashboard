@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyTrack — Study Planner</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div>
+                <div class="brand">
+                    <div class="brand-mark">S</div>
+                    <div><strong>StudyTrack</strong><span>Student workspace</span></div>
+                </div>
+                <nav class="navigation">
+                    <p class="nav-label">WORKSPACE</p>
+                    <a href="index.htm" class="nav-item"><span>⌂</span> Dashboard</a>
+                    <a href="index.htm#subjects" class="nav-item"><span>▦</span> Subjects & Syllabus</a>
+                    <a href="index.htm#tasks" class="nav-item"><span>✓</span> Tasks</a>
+                    <a href="videos.htm" class="nav-item"><span>▶</span> Video Tracker</a>
+                    <a href="notes.htm" class="nav-item"><span>📝</span> Notes</a>
+                    <a href="planner.htm" class="nav-item active"><span>📅</span> Planner</a>
+                    <a href="progress.htm" class="nav-item"><span>↗</span> Progress</a>
+                </nav>
+            </div>
+            <div class="sidebar-bottom">
+                <div class="semester-card">
+                    <span>CURRENT PLAN</span>
+                    <strong>Semester Focus</strong>
+                    <small>Keep moving. One session at a time.</small>
+                </div>
+                <div class="sidebar-footer">
+                    <span class="status-dot"></span>
+                    <span>StudyTrack v2.0</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Workspace -->
+        <main class="main">
+            <header class="topbar">
+                <button class="mobile-menu" id="mobileMenu" aria-label="Open navigation menu">☰</button>
+                <div class="topbar-title">Study Planner & Schedule</div>
+                
+                <div style="display: flex; gap: 8px; align-items: center;">
+                    <button class="btn-sm" type="button" onclick="toggleCommandPalette()" title="Search workspace (Ctrl+K)">
+                        🔍 <kbd style="font-size: 10px; background: var(--surface-subtle); padding: 1px 4px; border-radius: 3px;">Ctrl+K</kbd>
+                    </button>
+                    <button class="btn-sm" type="button" onclick="toggleDarkMode()" title="Toggle Dark Mode">
+                        🌙 Dark Mode
+                    </button>
+                    <button class="profile-button" type="button" onclick="openBackupModal()">
+                        <span class="avatar">💾</span>
+                        <span class="profile-name">Backup</span>
+                    </button>
+                </div>
+            </header>
+
+            <div class="content">
+                <section class="hero">
+                    <div>
+                        <span class="eyebrow">SCHEDULE WORKSPACE</span>
+                        <h1>Study Planner & Sessions</h1>
+                        <p>Schedule focused study blocks, assign subjects, and track total learning hours.</p>
+                    </div>
+                    <button class="primary-button" type="button" onclick="openPlannerModal()">+ Schedule Session</button>
+                </section>
+
+                <!-- Statistics Grid -->
+                <section class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-card-top"><span class="stat-card-title">Total Sessions</span><div class="stat-icon">📅</div></div>
+                        <div class="stat-value" id="pStatsTotal">0</div>
+                        <div class="stat-footer">Scheduled blocks</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card-top"><span class="stat-card-title">Planned Time</span><div class="stat-icon">⏱</div></div>
+                        <div class="stat-value" id="pStatsHours">0h</div>
+                        <div class="stat-footer">Total study time</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card-top"><span class="stat-card-title">Completed Time</span><div class="stat-icon">✓</div></div>
+                        <div class="stat-value" id="pStatsCompletedHours">0h</div>
+                        <div class="stat-footer">Logged study hours</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card-top"><span class="stat-card-title">Completion Rate</span><div class="stat-icon">%</div></div>
+                        <div class="stat-value" id="pStatsRate">0%</div>
+                        <div class="progress-track" style="margin-top: 8px;">
+                            <div class="progress-fill" id="pStatsRateFill" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Filter Controls & Session List -->
+                <section class="panel">
+                    <div class="panel-header">
+                        <div>
+                            <span class="eyebrow">SESSION LIST</span>
+                            <h2>Upcoming & Past Sessions</h2>
+                        </div>
+                    </div>
+
+                    <div class="task-controls">
+                        <input type="text" id="plannerSearchInput" class="input" placeholder="🔍 Search session title, topic or subject..." oninput="filterPlannerSessions()" />
+                        <select id="plannerFilterSubject" class="select" onchange="filterPlannerSessions()"></select>
+                        <select id="plannerFilterStatus" class="select" onchange="filterPlannerSessions()">
+                            <option value="all">All Statuses</option>
+                            <option value="planned">Planned</option>
+                            <option value="completed">Completed</option>
+                        </select>
+                    </div>
+
+                    <div id="plannerGridContainer" class="task-list"></div>
+                    <div id="plannerEmptyState" class="empty-state" style="display:none;">
+                        <div class="empty-icon">📅</div>
+                        <strong>No study sessions scheduled</strong>
+                        <p>Plan your first dedicated study session block above.</p>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Schedule Session Modal -->
+    <div id="plannerModal" class="modal-overlay" style="display:none;" onclick="handlePlannerOverlayClick(event)">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3 id="plannerModalTitle">Schedule Study Session</h3>
+                <button type="button" class="delete-button" onclick="closePlannerModal()">×</button>
+            </div>
+            <form id="plannerForm" onsubmit="savePlannerSession(event)">
+                <div class="modal-body">
+                    <input type="hidden" id="plannerIdInput">
+                    <div class="form-group">
+                        <label for="plannerTitleInput">Session Title / Topic *</label>
+                        <input type="text" id="plannerTitleInput" class="input" required placeholder="e.g. Chapter 4 Data Structures Revision">
+                    </div>
+                    <div class="form-group">
+                        <label for="plannerSubjectInput">Subject *</label>
+                        <select id="plannerSubjectInput" class="select" required></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="plannerDateInput">Date *</label>
+                        <input type="date" id="plannerDateInput" class="input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="plannerDurationInput">Planned Duration (Minutes) *</label>
+                        <input type="number" id="plannerDurationInput" class="input" required min="15" max="480" step="15" value="60">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="secondary-button" onclick="closePlannerModal()">Cancel</button>
+                    <button type="submit" class="primary-button">Save Session</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Backup Modal -->
+    <div id="backupModal" class="modal-overlay" style="display:none;">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>System Backup & Migration</h3>
+                <button type="button" class="delete-button" onclick="closeBackupModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <p style="font-size: 13px; color: var(--text-muted);">
+                    Export all your subjects, tasks, syllabus, video tracks, notes, and study sessions into a single JSON file.
+                </p>
+                <button type="button" class="primary-button" onclick="exportSystemData()" style="width: 100%;">📥 Export Complete Backup (JSON)</button>
+                <hr style="border: 0; border-top: 1px solid var(--border); margin: 12px 0;">
+                <label style="font-size: 12px; font-weight: 600;">Restore from Backup JSON</label>
+                <input type="file" id="backupFileInput" accept=".json" class="input" onchange="importSystemData(event)">
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/theme.js"></script>
+    <script src="js/command.js"></script>
+    <script src="js/planner.js"></script>
+    <script src="js/backup.js"></script>
+</body>
+</html>

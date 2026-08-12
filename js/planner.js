@@ -1,11 +1,10 @@
 /**
- * StudyTrack — Study Planner Engine (Phase 2)
+ * StudyTrack — Study Planner Engine
  */
 
 const PLANNER_STORAGE_KEY = 'studyTrack_planner';
 const SUBJECTS_STORAGE_KEY = 'studyTrack_subjects';
 
-// Global exports
 window.openPlannerModal = openPlannerModal;
 window.closePlannerModal = closePlannerModal;
 window.handlePlannerOverlayClick = handlePlannerOverlayClick;
@@ -20,7 +19,6 @@ function loadPlanner() {
         const saved = localStorage.getItem(PLANNER_STORAGE_KEY);
         return saved ? JSON.parse(saved) : [];
     } catch (e) {
-        console.error("Error loading planner data:", e);
         return [];
     }
 }
@@ -29,18 +27,19 @@ function savePlanner(data) {
     try {
         localStorage.setItem(PLANNER_STORAGE_KEY, JSON.stringify(data));
     } catch (e) {
-        console.error("Error saving planner data:", e);
+        console.error("Error saving planner:", e);
     }
 }
 
 function getActiveSubjects() {
     try {
         const saved = localStorage.getItem(SUBJECTS_STORAGE_KEY);
-        if (!saved) return [];
+        if (!saved) return ["Java", "Python", "Data Structures"];
         const parsed = JSON.parse(saved);
+        if (!Array.isArray(parsed) || parsed.length === 0) return ["Java", "Python", "Data Structures"];
         return parsed.map(s => (typeof s === 'string' ? s : s.name)).filter(Boolean);
     } catch (e) {
-        return [];
+        return ["Java", "Python", "Data Structures"];
     }
 }
 
@@ -94,7 +93,7 @@ function closePlannerModal() {
 }
 
 function handlePlannerOverlayClick(event) {
-    if (event.target && event.target.id === 'plannerModal') {
+    if (event && event.target && event.target.id === 'plannerModal') {
         closePlannerModal();
     }
 }
@@ -108,15 +107,17 @@ function savePlannerSession(event) {
     const dateInput = document.getElementById('plannerDateInput');
     const durationInput = document.getElementById('plannerDurationInput');
 
-    const title = titleInput.value.trim();
-    const subject = subjectInput.value;
-    const date = dateInput.value;
-    const duration = parseInt(durationInput.value, 10) || 60;
+    const title = titleInput ? titleInput.value.trim() : '';
+    const subject = subjectInput ? subjectInput.value : '';
+    const date = dateInput ? dateInput.value : '';
+    const duration = durationInput ? parseInt(durationInput.value, 10) || 60 : 60;
 
-    if (!title || !subject || !date) return;
+    if (!title) { alert("Please enter a session title."); return; }
+    if (!subject) { alert("Please select a subject."); return; }
+    if (!date) { alert("Please select a date."); return; }
 
     const planner = loadPlanner();
-    const id = idInput.value;
+    const id = idInput ? idInput.value : '';
 
     if (id) {
         const idx = planner.findIndex(p => p.id === id);
@@ -171,7 +172,7 @@ function filterPlannerSessions() {
 
     const planner = loadPlanner();
     const filtered = planner.filter(s => {
-        const matchQuery = s.title.toLowerCase().includes(query) || s.subject.toLowerCase().includes(query);
+        const matchQuery = (s.title || '').toLowerCase().includes(query) || (s.subject || '').toLowerCase().includes(query);
         const matchSub = selectedSub === 'all' || s.subject === selectedSub;
         let matchStatus = true;
         if (selectedStatus === 'planned') matchStatus = !s.completed;
@@ -206,7 +207,7 @@ function renderPlannerSessions(list) {
         card.className = `task-item ${item.completed ? 'completed' : ''}`;
 
         card.innerHTML = `
-            <button class="task-check ${item.completed ? 'completed' : ''}" onclick="toggleSessionComplete('${item.id}')">
+            <button type="button" class="task-check ${item.completed ? 'completed' : ''}" onclick="toggleSessionComplete('${item.id}')">
                 ${item.completed ? '✓' : ''}
             </button>
             <div class="task-info">
@@ -218,7 +219,8 @@ function renderPlannerSessions(list) {
                 </div>
             </div>
             <div class="task-actions">
-                <button class="delete-button" onclick="deletePlannerSession('${item.id}')">×</button>
+                <span class="priority-badge ${item.completed ? 'priority-low' : 'priority-medium'}">${item.completed ? 'Completed' : 'Planned'}</span>
+                <button type="button" class="delete-button" onclick="deletePlannerSession('${item.id}')">×</button>
             </div>
         `;
         container.appendChild(card);
@@ -228,8 +230,8 @@ function renderPlannerSessions(list) {
 function updatePlannerStats() {
     const planner = loadPlanner();
     const total = planner.length;
-    const totalMinutes = planner.reduce((acc, s) => acc + (s.duration || 0), 0);
-    const completedMinutes = planner.filter(s => s.completed).reduce((acc, s) => acc + (s.duration || 0), 0);
+    const totalMinutes = planner.reduce((acc, s) => acc + (parseInt(s.duration, 10) || 0), 0);
+    const completedMinutes = planner.filter(s => s.completed).reduce((acc, s) => acc + (parseInt(s.duration, 10) || 0), 0);
 
     const totalHours = (totalMinutes / 60).toFixed(1);
     const compHours = (completedMinutes / 60).toFixed(1);
@@ -259,4 +261,7 @@ document.addEventListener('DOMContentLoaded', () => {
     populatePlannerSubjects();
     filterPlannerSessions();
     updatePlannerStats();
+
+    const form = document.getElementById('plannerForm');
+    if (form) form.addEventListener('submit', savePlannerSession);
 });
