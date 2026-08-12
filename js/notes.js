@@ -1,13 +1,13 @@
 /**
- * Student Study Dashboard - Day 7: Notes Management Engine
- * Vanilla JavaScript Engine (Defensive Compatibility Version)
+ * Student Study Dashboard - Day 7: Notes Management Engine (Fixed & Verified)
+ * Vanilla JavaScript Engine
  */
 
 const NOTES_STORAGE_KEY = 'studyTrack_notes';
 const SUBJECTS_STORAGE_KEY = 'studyTrack_subjects';
 
 // =========================================================
-// 1. GLOBAL EXPORTS (Bound immediately on load)
+// 1. GLOBAL EXPORTS
 // =========================================================
 window.openAddNoteModal = openAddNoteModal;
 window.closeNoteModal = closeNoteModal;
@@ -47,7 +47,7 @@ function saveNotes(notesData) {
 }
 
 /**
- * Safe, backward-compatible subject list parser [1]
+ * Safe subject list parser
  */
 function getActiveSubjects() {
     try {
@@ -151,7 +151,7 @@ function populateNotesTagFilter() {
 }
 
 /**
- * Safe submission handler
+ * Save note handler (Create / Update)
  */
 function handleSaveNote(event) {
     if (event && typeof event.preventDefault === "function") {
@@ -175,7 +175,6 @@ function handleSaveNote(event) {
     const rawTags = tagsInput.value.trim();
     const content = contentInput.value.trim();
 
-    // Validation checks [1]
     if (!title) {
         displayToastMessage("Please enter a note title.", "error");
         return;
@@ -189,7 +188,6 @@ function handleSaveNote(event) {
         return;
     }
 
-    // Defensive ES5 split/unique tag routine [1]
     const tags = [];
     if (rawTags) {
         const rawArray = rawTags.split(',');
@@ -205,7 +203,6 @@ function handleSaveNote(event) {
     const now = new Date().toISOString();
 
     if (id) {
-        // Edit Mode (Standard for-loop update)
         let updated = false;
         for (let i = 0; i < notes.length; i++) {
             if (notes[i].id === id) {
@@ -223,7 +220,6 @@ function handleSaveNote(event) {
             displayToastMessage("Study note updated successfully.", "success");
         }
     } else {
-        // Create Mode
         const newNote = {
             id: 'note_' + Date.now(),
             title: title,
@@ -270,7 +266,7 @@ function editNote(id) {
 }
 
 /**
- * Delete Trigger with fallback
+ * Delete Trigger with confirmation
  */
 function deleteNote(id) {
     if (confirm("Are you sure you want to delete this note?")) {
@@ -322,11 +318,8 @@ function viewNote(id) {
 
     document.getElementById('viewNoteCreated').textContent = "Created: " + formatNoteDate(note.createdAt);
     document.getElementById('viewNoteUpdated').textContent = "Updated: " + formatNoteDate(note.updatedAt);
-    
-    // Line breaks safety preservation
     document.getElementById('viewNoteContent').textContent = note.content;
 
-    // Render Tag elements
     const tagsContainer = document.getElementById('viewNoteTagsContainer');
     if (tagsContainer) {
         tagsContainer.innerHTML = '';
@@ -355,7 +348,7 @@ function viewNote(id) {
 }
 
 /**
- * Calculates Dashboard Statistics
+ * Calculates Notes Statistics
  */
 function updateNotesStatistics() {
     const notes = loadNotes();
@@ -399,7 +392,7 @@ function updateNotesStatistics() {
 }
 
 /**
- * Filter Engine Pipeline
+ * Search & Filter Pipeline
  */
 function filterAndSearchNotes() {
     const searchInput = document.getElementById('notesSearchInput');
@@ -421,14 +414,12 @@ function filterAndSearchNotes() {
         const isSubjectValid = activeSubjects.indexOf(note.subject) !== -1;
         const subjectLabel = isSubjectValid ? note.subject : "Unknown Subject";
 
-        // Query matches checking
         const tagString = Array.isArray(note.tags) ? note.tags.join(' ').toLowerCase() : '';
         const matchesSearch = note.title.toLowerCase().indexOf(query) !== -1 ||
                               note.content.toLowerCase().indexOf(query) !== -1 ||
                               subjectLabel.toLowerCase().indexOf(query) !== -1 ||
                               tagString.indexOf(query) !== -1;
 
-        // Subject check
         let matchesSubject = true;
         if (selectedSub !== 'All') {
             if (selectedSub === 'Unknown') {
@@ -438,7 +429,6 @@ function filterAndSearchNotes() {
             }
         }
 
-        // Tag check
         let matchesTag = true;
         if (selectedTag !== 'All') {
             matchesTag = Array.isArray(note.tags) && note.tags.indexOf(selectedTag) !== -1;
@@ -449,7 +439,6 @@ function filterAndSearchNotes() {
         }
     }
 
-    // Robust sorting loop
     filtered.sort((a, b) => {
         const timeA = new Date(a.updatedAt || a.createdAt).getTime();
         const timeB = new Date(b.updatedAt || b.createdAt).getTime();
@@ -467,7 +456,7 @@ function filterAndSearchNotes() {
 }
 
 /**
- * Grid rendering routine
+ * Render Notes Cards
  */
 function renderNotes(notesList) {
     const gridContainer = document.getElementById('notesGridContainer');
@@ -524,7 +513,7 @@ function renderNotes(notesList) {
             </div>
             <div class="note-card-actions">
                 <button class="btn-sm btn-watch" onclick="viewNote('${note.id}')">View</button>
-                <button class="btn-sm btn-progress" onclick="editNote('${note.id}')">Edit</button>
+                <button class="btn-sm" onclick="editNote('${note.id}')">Edit</button>
                 <button class="btn-sm btn-delete-vid" onclick="deleteNote('${note.id}')">Delete</button>
             </div>
         `;
@@ -581,7 +570,7 @@ function handleViewNoteModalOverlayClick(event) {
 }
 
 /**
- * Safe Toast fallback
+ * Toast helper
  */
 function displayToastMessage(msg, type) {
     if (typeof showToast === "function") {
@@ -608,7 +597,7 @@ function escapeNoteHTML(str) {
 }
 
 /**
- * PAGE SETUP EVENT ATTACHMENT
+ * Page setup event attachment
  */
 document.addEventListener('DOMContentLoaded', () => {
     populateNotesSubjectDropdowns();
@@ -616,7 +605,6 @@ document.addEventListener('DOMContentLoaded', () => {
     filterAndSearchNotes();
     updateNotesStatistics();
 
-    // Escape Key Bindings
     window.addEventListener('keydown', (e) => {
         if (e && e.key === 'Escape') {
             closeNoteModal();
@@ -624,7 +612,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Re-verify subject dropdown integrity when storage gets manipulated globally
     window.addEventListener('storage', (e) => {
         if (e && (e.key === SUBJECTS_STORAGE_KEY || e.key === NOTES_STORAGE_KEY)) {
             populateNotesSubjectDropdowns();

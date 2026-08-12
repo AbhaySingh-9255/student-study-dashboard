@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyTrack — Study Notes</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div>
+                <div class="brand">
+                    <div class="brand-mark">S</div>
+                    <div><strong>StudyTrack</strong><span>Student workspace</span></div>
+                </div>
+                <nav class="navigation">
+                    <p class="nav-label">WORKSPACE</p>
+                    <a href="index.htm" class="nav-item"><span>⌂</span> Dashboard</a>
+                    <a href="index.htm#subjects" class="nav-item"><span>▦</span> Subjects & Syllabus</a>
+                    <a href="index.htm#tasks" class="nav-item"><span>✓</span> Tasks</a>
+                    <a href="videos.htm" class="nav-item"><span>▶</span> Video Tracker</a>
+                    <a href="notes.htm" class="nav-item active"><span>📝</span> Notes</a>
+                    <a href="planner.htm" class="nav-item"><span>📅</span> Planner</a>
+                    <a href="progress.htm" class="nav-item"><span>↗</span> Progress</a>
+                </nav>
+            </div>
+        </aside>
+
+        <main class="main">
+            <header class="topbar">
+                <button class="mobile-menu" id="mobileMenu">☰</button>
+                <div class="topbar-title">Notes Management Workspace</div>
+            </header>
+
+            <div class="content">
+                <section class="hero">
+                    <div>
+                        <span class="eyebrow">NOTES WORKSPACE</span>
+                        <h1>Study Notes & Summaries</h1>
+                        <p>Keep subject key takeaways, formulas, and revision guides organized.</p>
+                    </div>
+                    <button class="primary-button" onclick="openAddNoteModal()">+ Create Note</button>
+                </section>
+
+                <!-- Stats Grid -->
+                <section class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-card-top"><span class="stat-card-title">Total Notes</span><div class="stat-icon">📝</div></div>
+                        <div class="stat-value" id="nStatsTotal">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card-top"><span class="stat-card-title">Subjects Covered</span><div class="stat-icon">▦</div></div>
+                        <div class="stat-value" id="nStatsSubjects">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card-top"><span class="stat-card-title">Active Tags</span><div class="stat-icon">#</div></div>
+                        <div class="stat-value" id="nStatsTags">0</div>
+                    </div>
+                </section>
+
+                <!-- Filters -->
+                <section class="panel">
+                    <div class="task-controls">
+                        <input type="text" id="notesSearchInput" class="input" placeholder="🔍 Search notes title, content, or tag..." oninput="filterAndSearchNotes()" />
+                        <select id="notesFilterSubject" class="select" onchange="filterAndSearchNotes()"></select>
+                        <select id="notesFilterTag" class="select" onchange="filterAndSearchNotes()"></select>
+                        <select id="notesSortSelect" class="select" onchange="filterAndSearchNotes()">
+                            <option value="updated">Recently Updated</option>
+                            <option value="created">Recently Created</option>
+                            <option value="oldest">Oldest First</option>
+                            <option value="az">A - Z Title</option>
+                        </select>
+                    </div>
+
+                    <!-- Notes Grid -->
+                    <div id="notesGridContainer" class="notes-grid-container"></div>
+                    <div id="notesEmptyState" class="empty-state" style="display:none;">
+                        <div class="empty-icon">📝</div>
+                        <strong>No study notes found</strong>
+                        <p>Create your first note to summarize topics and study materials.</p>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Create/Edit Modal -->
+    <div id="noteModal" class="modal-overlay" style="display:none;" onclick="handleNoteModalOverlayClick(event)">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3 id="note-modal-title">Create Study Note</h3>
+                <button class="delete-button" onclick="closeNoteModal()">×</button>
+            </div>
+            <form id="noteForm" onsubmit="handleSaveNote(event)">
+                <div class="modal-body">
+                    <input type="hidden" id="noteIdInput">
+                    <div class="form-group">
+                        <label>Title *</label>
+                        <input type="text" id="noteTitleInput" class="input" required placeholder="e.g. Java Collection Framework Summary">
+                    </div>
+                    <div class="form-group">
+                        <label>Subject *</label>
+                        <select id="noteSubjectInput" class="select" required></select>
+                    </div>
+                    <div class="form-group">
+                        <label>Tags (Comma separated)</label>
+                        <input type="text" id="noteTagsInput" class="input" placeholder="e.g. revision, exam, formulas">
+                    </div>
+                    <div class="form-group">
+                        <label>Content *</label>
+                        <textarea id="noteContentInput" class="textarea" rows="6" required placeholder="Type notes content here..."></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="secondary-button" onclick="closeNoteModal()">Cancel</button>
+                    <button type="submit" id="noteSaveBtn" class="primary-button">Save Note</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- View Reader Modal -->
+    <div id="viewNoteModal" class="modal-overlay" style="display:none;" onclick="handleViewNoteModalOverlayClick(event)">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3 id="view-note-modal-title">Note View</h3>
+                <button class="delete-button" onclick="closeViewNoteModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <div style="display:flex; gap:10px; align-items:center;">
+                    <span id="viewNoteSubject" class="note-card-subject">Subject</span>
+                    <small id="viewNoteCreated" class="note-card-date"></small>
+                    <small id="viewNoteUpdated" class="note-card-date"></small>
+                </div>
+                <div id="viewNoteTagsContainer" class="note-card-tags"></div>
+                <p id="viewNoteContent" style="white-space: pre-wrap; color: var(--text-main); font-size: 14px; line-height: 1.6;"></p>
+            </div>
+            <div class="modal-footer">
+                <button id="viewNoteEditBtn" class="primary-button">Edit Note</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/notes.js"></script>
+</body>
+</html>

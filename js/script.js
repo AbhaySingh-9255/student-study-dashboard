@@ -162,6 +162,12 @@ if (subjectForm) {
         populateSubjectDropdown();
         updateStatistics();
 
+        /* Trigger dynamic updates across Notes, YouTube, and Planner workspaces */
+        window.dispatchEvent(new Event("storage"));
+        if (typeof populateNotesSubjectDropdowns === "function") populateNotesSubjectDropdowns();
+        if (typeof populateVideoSubjectDropdown === "function") populateVideoSubjectDropdown();
+        if (typeof populatePlannerSubjects === "function") populatePlannerSubjects();
+
         showToast(`${name} added successfully.`, "success");
     });
 }
@@ -307,6 +313,12 @@ function deleteSubject(id) {
     populateSubjectDropdown();
     renderTasks();
     updateStatistics();
+
+    /* Sync updates across all modules */
+    window.dispatchEvent(new Event("storage"));
+    if (typeof populateNotesSubjectDropdowns === "function") populateNotesSubjectDropdowns();
+    if (typeof populateVideoSubjectDropdown === "function") populateVideoSubjectDropdown();
+    if (typeof populatePlannerSubjects === "function") populatePlannerSubjects();
 
     showToast(`${subject.name} deleted.`, "success");
 }
@@ -580,3 +592,4 @@ window.deleteSubject = deleteSubject;
 window.toggleTask = toggleTask;
 window.deleteTask = deleteTask;
 window.updateStatistics = updateStatistics;
+window.showToast = showToast;
